@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="788.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TambahBarangController">
+   <left>
+<AnchorPane fx:id="Menu" prefHeight="602.0" prefWidth="165.0" style="-fx-background-color: #3f704d; -fx-border-color: #ffffff; -fx-border-width: 0px 2px 0px 0px;" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="7.0" layoutY="161.0" mnemonicParsing="false" prefHeight="25.5" prefWidth="150.0" style="-fx-background-color: #d5e3d0; -fx-border-color: #ffffff; -fx-border-width: 2px 0px 2px 0px;" text="     DAFTAR BARANG" textFill="#3f704d" />
+            <Button layoutX="7.0" layoutY="184.5" mnemonicParsing="false" prefHeight="25.5" prefWidth="150.0" style="-fx-background-color: #d5e3d0; -fx-border-color: #ffffff; -fx-border-width: 0px 0px 2px 0px;" text="[Menambahkan Barang... " textFill="#3f704d" />
+            <Button alignment="BOTTOM_RIGHT" layoutX="32.0" layoutY="24.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="100.0" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-width: 0px 0px 1px 0px;" text="Menu   " textFill="#d5e3d0">
+               <font>
+                  <Font size="16.0" />
+               </font></Button>
+            <ImageView fitHeight="23.0" fitWidth="27.0" layoutX="41.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@main-menu.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="24.0" fitWidth="27.0" layoutX="16.0" layoutY="163.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@add.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </left>
+   <right>
+      <AnchorPane prefHeight="602.0" prefWidth="601.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="601.0" prefWidth="624.0" style="-fx-background-color: #d5e3d0; -fx-border-width: 0px 0px 2px 2px; -fx-border-color: #ffffff;">
+               <children>
+                  <Button layoutX="594.0" layoutY="2.0" mnemonicParsing="false" onAction="#btnExit" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <FontAwesomeIcon fill="#3f704d" glyphName="CLOSE" size="15" />
+                     </graphic>
+                  </Button>
+                  <Button layoutX="279.0" layoutY="467.0" mnemonicParsing="false" onAction="#btnSimpan" prefHeight="42.0" prefWidth="62.0" style="-fx-background-color: #3f704d; -fx-border-color: #d5e3d0; -fx-border-width: 0px 0px 4px 0px;" text="Simpan" textFill="WHITE" />
+                  <Button layoutX="48.0" layoutY="507.0" mnemonicParsing="false" onAction="#btnKembali" prefHeight="42.0" prefWidth="98.0" style="-fx-background-color: #3f704d; -fx-border-color: #d5e3d0; -fx-border-width: 0px 4px 4px 0px;" text="Kembali" textFill="WHITE" />
+                  <FontAwesomeIcon fill="#d5e3d0" glyphName="ANGLE_LEFT" layoutX="54.0" layoutY="536.0" size="30" />
+                  <TextField fx:id="tfNamaBarang" alignment="CENTER" layoutX="121.0" layoutY="155.0" prefHeight="28.0" prefWidth="150.0" promptText="ex : Air Mineral, Kecap," style="-fx-background-color: transparent; -fx-border-color: #3f704d; -fx-border-width: 2px 0px 2px 2px; -fx-text-fill: #8c918d;">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></TextField>
+                  <DatePicker fx:id="tfDate" layoutX="230.0" layoutY="401.0" prefHeight="28.0" prefWidth="159.0" style="-fx-background-color: #3f704d; -fx-border-color: #3f704d; -fx-text-fill: #8c918d; -fx-border-width: 0px 0px 0px 0px; -fx-control-inner-background: #d5e3d0;" />
+                  <Label alignment="CENTER" layoutX="123.0" layoutY="129.0" prefHeight="18.0" prefWidth="148.0" text="Nama Barang" textAlignment="CENTER" textFill="#3f704d">
+                     <font>
+                        <Font name="Futura-Medium" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="347.0" layoutY="129.0" prefHeight="18.0" prefWidth="148.0" text="ID Barang" textAlignment="CENTER" textFill="#3f704d">
+                     <font>
+                        <Font name="Futura-Medium" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="123.0" layoutY="209.0" prefHeight="18.0" prefWidth="148.0" text="Merk" textAlignment="CENTER" textFill="#3f704d">
+                     <font>
+                        <Font name="Futura-Medium" size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="tfID" alignment="CENTER" layoutX="345.0" layoutY="155.0" prefHeight="28.0" prefWidth="150.0" promptText="ex : B001" style="-fx-background-color: transparent; -fx-border-color: #3f704d; -fx-border-width: 2px 2px 2px 0px; -fx-text-fill: #8c918d;">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="tfHarga" alignment="CENTER" layoutX="123.0" layoutY="314.0" prefHeight="28.0" prefWidth="150.0" promptText="ex : 50.000, 24.000, etc" style="-fx-background-color: transparent; -fx-border-color: #3f704d; -fx-border-width: 2px 0px 2px 2px; -fx-text-fill: #8c918d;">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="tfMerk" alignment="CENTER" layoutX="122.0" layoutY="236.0" prefHeight="28.0" prefWidth="150.0" promptText="ex : Bango, Dancow, etc" style="-fx-background-color: transparent; -fx-border-color: #3f704d; -fx-border-width: 2px 0px 2px 2px; -fx-text-fill: #8c918d;">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </TextField>
+                  <Label alignment="CENTER" layoutX="124.0" layoutY="289.0" prefHeight="18.0" prefWidth="148.0" text="Harga /Satuan" textAlignment="CENTER" textFill="#3f704d">
+                     <font>
+                        <Font name="Futura-Medium" size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="tfStok" alignment="CENTER" layoutX="345.0" layoutY="314.0" prefHeight="28.0" prefWidth="150.0" promptText="ex : 75, 88, 130, 200, etc" style="-fx-background-color: transparent; -fx-border-color: #3f704d; -fx-border-width: 2px 2px 2px 0px; -fx-text-fill: #8c918d;">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </TextField>
+                  <Label alignment="CENTER" layoutX="346.0" layoutY="209.0" prefHeight="18.0" prefWidth="148.0" text="Jenis" textAlignment="CENTER" textFill="#3f704d">
+                     <font>
+                        <Font name="Futura-Medium" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="236.0" layoutY="373.0" prefHeight="18.0" prefWidth="148.0" text="Tanggal Kadaluarsa" textAlignment="CENTER" textFill="#3f704d">
+                     <font>
+                        <Font name="Futura-Medium" size="16.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane layoutX="299.0" layoutY="109.0" prefHeight="255.0" prefWidth="11.0" style="-fx-border-color: #8c918d; -fx-border-width: 0px 2px 0px 0px;" />
+                  <AnchorPane layoutX="62.0" layoutY="89.0" prefHeight="20.0" prefWidth="496.0" style="-fx-border-color: #8c918d; -fx-border-width: 0px 0px 2px 0px;" />
+                  <AnchorPane layoutX="62.0" layoutY="432.0" prefHeight="20.0" prefWidth="496.0" style="-fx-border-color: #8c918d; -fx-border-width: 0px 0px 2px 0px;" />
+                  <FontAwesomeIcon fill="#3f704d" glyphName="CART_PLUS" layoutX="409.0" layoutY="75.0" size="30" />
+                  <Label alignment="CENTER" layoutX="139.0" layoutY="51.0" prefHeight="22.0" prefWidth="269.0" text="MENAMBAHKAN BARANG" textAlignment="CENTER" textFill="#3f704d">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="346.0" layoutY="289.0" prefHeight="18.0" prefWidth="148.0" text="Stok" textAlignment="CENTER" textFill="#3f704d">
+                     <font>
+                        <Font name="Futura-Medium" size="16.0" />
+                     </font>
+                  </Label>
+                  <ChoiceBox fx:id="boxJenis" layoutX="345.0" layoutY="236.0" prefWidth="150.0" style="-fx-background-color: transparent; -fx-border-color: #3f704d; -fx-border-width: 2px 2px 2px 0px;" stylesheets="@BoxStyle.css" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>

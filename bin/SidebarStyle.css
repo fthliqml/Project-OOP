@@ -1,0 +1,5 @@
+.sidebarItem:pressed{
+    -fx-background-color : #146886;
+    -fx-border-color : #d5e3d0;
+    -fx-border-width : 0px 0px 0px 0px;
+}

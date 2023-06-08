@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="788.0" style="-fx-background-color: #d5e3d0;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PenggunaController">
+   <left>
+      <AnchorPane fx:id="Menu" prefHeight="602.0" prefWidth="165.0" style="-fx-background-color: #3f704d; -fx-border-color: #ffff; -fx-border-width: 0px 2px 0px 0px;" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="7.0" layoutY="161.0" mnemonicParsing="false" onAction="#btnBarang" prefHeight="51.0" prefWidth="150.0" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-width: 0px 0px 2px 0px;" text="       DAFTAR BARANG" textFill="WHITE" />
+            <Button layoutX="7.0" layoutY="211.0" mnemonicParsing="false" onAction="#btnSupplier" prefHeight="51.0" prefWidth="150.0" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-width: 0px 0px 2px 0px;" text="SUPPLIER     " textFill="WHITE" />
+            <Button layoutX="7.0" layoutY="112.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="150.0" style="-fx-background-color: #d5e3d0; -fx-border-color: #ffffff; -fx-border-width: 0px 0px 2px 0px;" text="PENGGUNA " textFill="#3f704d" />
+            <Button layoutX="7.0" layoutY="261.0" mnemonicParsing="false" onAction="#btnTransaksi" prefHeight="51.0" prefWidth="150.0" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-width: 0px 0px 2px 0px;" text="PENJUALAN  " textFill="WHITE" />
+            <Button alignment="BOTTOM_RIGHT" layoutX="32.0" layoutY="24.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="100.0" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-width: 0px 0px 1px 0px;" text="Menu   " textFill="#d5e3d0">
+               <font>
+                  <Font size="16.0" />
+               </font></Button>
+            <Button layoutX="17.0" layoutY="403.0" mnemonicParsing="false" onAction="#btnLogout" prefHeight="51.0" prefWidth="130.0" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-width: 0px 0px 2px 0px;" text="Logout" textFill="WHITE" />
+            <ImageView fitHeight="23.0" fitWidth="27.0" layoutX="41.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@main-menu.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="24.0" fitWidth="27.0" layoutX="20.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@guest-list.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="24.0" fitWidth="27.0" layoutX="20.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@to-do-list.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="24.0" fitWidth="27.0" layoutX="20.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@deal.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="24.0" fitWidth="27.0" layoutX="20.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@sales.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="24.0" fitWidth="27.0" layoutX="33.0" layoutY="417.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@logout.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </left>
+   <right>
+      <AnchorPane prefHeight="571.0" prefWidth="510.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane layoutX="4.0" prefHeight="462.0" prefWidth="622.0" style="-fx-background-color: #d5e3d0; -fx-border-width: 0px 0px 2px 0px; -fx-border-color: #ffffff;">
+               <children>
+                  <Button layoutX="594.0" layoutY="2.0" mnemonicParsing="false" onAction="#btnExit" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <FontAwesomeIcon fill="#3f704d" glyphName="CLOSE" size="15" />
+                     </graphic>
+                  </Button>
+                  <Circle fill="#3f704d" layoutX="309.0" layoutY="75.0" radius="35.0" stroke="#d5e3d0" strokeType="INSIDE" />
+                  <FontAwesomeIcon fill="#d5e3d0" glyphName="USER" layoutX="289.0" layoutY="92.0" size="50" />
+                  <TextField fx:id="txtJabatan" alignment="CENTER" editable="false" layoutX="203.0" layoutY="143.0" prefHeight="35.0" prefWidth="210.0" style="-fx-background-color: transparent; -fx-border-color: #ffff; -fx-text-fill: #3f704d;">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></TextField>
+                  <TextField fx:id="txtNama" alignment="CENTER" editable="false" layoutX="203.0" layoutY="209.0" prefHeight="35.0" prefWidth="210.0" style="-fx-background-color: transparent; -fx-border-color: #ffff; -fx-text-fill: #3f704d;">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="txtTelp" alignment="CENTER" editable="false" layoutX="204.0" layoutY="271.0" prefHeight="35.0" prefWidth="210.0" style="-fx-background-color: transparent; -fx-border-color: #ffff; -fx-text-fill: #3f704d;">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="204.0" layoutY="111.0" text="Jabatan :" textFill="WHITE">
+                     <font>
+                        <Font name="Brush Script MT Italic" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="204.0" layoutY="178.0" text="Nama :" textFill="WHITE">
+                     <font>
+                        <Font name="Brush Script MT Italic" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="204.0" layoutY="240.0" text="Nomor Telepon :" textFill="WHITE">
+                     <font>
+                        <Font name="Brush Script MT Italic" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="204.0" layoutY="306.0" text="Alamat :" textFill="WHITE">
+                     <font>
+                        <Font name="Brush Script MT Italic" size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtAlamat" alignment="CENTER" editable="false" layoutX="203.0" layoutY="338.0" prefHeight="35.0" prefWidth="210.0" style="-fx-background-color: transparent; -fx-border-color: #ffff; -fx-text-fill: #3f704d;">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </right>
+   <bottom>
+      <AnchorPane prefHeight="138.0" prefWidth="788.0" style="-fx-background-color: #3f704d;" BorderPane.alignment="CENTER">
+         <children>
+            <Text fill="WHITE" layoutX="206.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PEMANTAUAN STOK BARANG">
+               <font>
+                  <Font name="Dubai Bold" size="20.0" />
+               </font>
+            </Text>
+            <FontAwesomeIcon fill="#efefef" glyphName="SHOPPING_CART" layoutX="497.0" layoutY="87.0" size="50" />
+         </children>
+      </AnchorPane>
+   </bottom>
+</BorderPane>

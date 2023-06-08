@@ -1,63 +1,159 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.Group?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserLoginController">
-   <left>
-      <AnchorPane prefHeight="470.0" prefWidth="343.0" style="-fx-background-color: #3f704d;" BorderPane.alignment="CENTER">
-         <children>
-            <FontAwesomeIcon fill="#efefef" glyphName="SHOPPING_CART" layoutX="95.0" layoutY="236.0" size="150" />
-            <Text fill="WHITE" layoutX="36.0" layoutY="293.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PEMANTAUAN STOK BARANG">
-               <font>
-                  <Font name="Dubai Bold" size="20.0" />
-               </font>
-            </Text>
-         </children></AnchorPane>
-   </left>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #3f704d;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserLoginController">
    <right>
-      <AnchorPane prefHeight="500.0" prefWidth="350.0" BorderPane.alignment="CENTER">
+      <AnchorPane fx:id="rightAnchor" prefHeight="500.0" prefWidth="350.0" style="-fx-background-color: #ffff;" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="140.0" layoutY="351.0" mnemonicParsing="false" onAction="#btnLogIn" prefHeight="40.0" prefWidth="88.0" style="-fx-background-color: #3f704d;" text="Login!" textFill="WHITE" />
-            <TextField fx:id="tfUsername" layoutX="119.0" layoutY="221.0" promptText="UserName" style="-fx-background-color: transparent; -fx-border-color: #5ca904; -fx-border-width: 0px 0px 2px 0px; -fx-text-fill: #3f704d;" />
-            <FontAwesomeIcon fill="#3f704d" glyphName="USER" layoutX="87.0" layoutY="244.0" size="20" />
-            <FontAwesomeIcon fill="#3f704d" glyphName="KEY" layoutX="85.0" layoutY="295.0" size="20" />
-            <Text fill="#5ca904" layoutX="120.0" layoutY="439.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Petunjuk : Pemilik Toko" wrappingWidth="128.81597900390625" />
-            <FontAwesomeIcon fill="#3f704d" glyphName="GROUP" layoutX="144.0" layoutY="114.0" size="75" />
-            <Text fill="#3f704d" layoutX="124.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Agent Login">
+            <Group layoutX="140.0" layoutY="351.0" />
+            <TextField fx:id="tfUsername" layoutX="119.0" layoutY="221.0" promptText="Username" style="-fx-background-color: transparent; -fx-border-color: #37afe7; -fx-border-width: 0px 0px 2px 0px; -fx-text-fill: #3f704d;">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></TextField>
+            <FontAwesomeIcon fx:id="iconUser" fill="#37afe7" glyphName="USER" layoutX="87.0" layoutY="245.0" size="20" />
+            <FontAwesomeIcon fx:id="IconKey" fill="#37afe7" glyphName="KEY" layoutX="85.0" layoutY="295.0" size="20" />
+            <Text fx:id="labelAgentLogin" fill="#37afe7" layoutX="115.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Agent Login">
                <font>
                   <Font name="Tahoma Bold" size="20.0" />
                </font>
             </Text>
-            <CheckBox layoutX="130.0" layoutY="313.0" mnemonicParsing="false" onAction="#checkSimpanUsername" text="Simpan Username" textFill="#5ca904">
-               <font>
-                  <Font size="11.0" />
-               </font>
-            </CheckBox>
             <Button layoutX="310.0" layoutY="7.0" mnemonicParsing="false" onAction="#btnExit" style="-fx-background-color: transparent;">
                <graphic>
-                  <FontAwesomeIcon fill="#3f704d" glyphName="CLOSE" size="15" text="" />
+                  <FontAwesomeIcon fx:id="exitBlue" fill="#37afe7" glyphName="CLOSE" size="15" text="" />
                </graphic>
             </Button>
-            <PasswordField fx:id="tfPassword" layoutX="119.0" layoutY="266.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #5ca904; -fx-border-width: 0px 0px 2px 0px; -fx-text-fill: #3f704d;" />
+            <PasswordField fx:id="tfPassword" layoutX="119.0" layoutY="266.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #37afe7; -fx-border-width: 0px 0px 2px 0px; -fx-text-fill: #3f704d;">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></PasswordField>
             <AnchorPane layoutX="336.0" layoutY="-13.0" prefHeight="500.0" prefWidth="15.0" style="-fx-background-color: #3f704d;" />
+            <Button fx:id="RegisterID" layoutX="80.0" layoutY="364.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="88.0" style="-fx-background-color: #37afe7;" text="Buat Akun" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="btnLoginID" layoutX="192.0" layoutY="364.0" mnemonicParsing="false" onAction="#btnLogIn" prefHeight="40.0" prefWidth="88.0" style="-fx-background-color: #37afe7;" text="Login" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+            <Label fx:id="labelNote" layoutX="77.0" layoutY="339.0" text="Belum Punya Akun?" textFill="#3f704d">
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font></Label>
+            <ImageView fx:id="imgGuest" fitHeight="101.0" fitWidth="103.0" layoutX="125.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@user.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </right>
-   <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
-   </center>
    <bottom>
       <AnchorPane prefHeight="15.0" prefWidth="700.0" style="-fx-background-color: #3f704d;" BorderPane.alignment="CENTER" />
    </bottom>
    <top>
       <AnchorPane prefHeight="15.0" prefWidth="700.0" style="-fx-background-color: #3f704d;" BorderPane.alignment="CENTER" />
    </top>
+   <left>
+      <AnchorPane prefHeight="466.0" prefWidth="330.0" style="-fx-background-color: #ffff;" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane layoutY="-1.0" prefHeight="470.0" prefWidth="15.0" style="-fx-background-color: #3f704d; -fx-border-color: #3f704d; -fx-border-width: 0px 0px 80px 0px;" />
+            <AnchorPane fx:id="slider" layoutX="8.0" prefHeight="469.0" prefWidth="342.0" style="-fx-background-color: #3f704d;">
+               <children>
+                  <Button layoutX="314.0" layoutY="-5.0" mnemonicParsing="false" onAction="#btnExit" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <FontAwesomeIcon fx:id="exitWhite" fill="WHITE" glyphName="CLOSE" size="15" text="" />
+                     </graphic>
+                  </Button>
+                  <Text fill="WHITE" layoutX="22.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PEMANTAUAN STOK BARANG">
+                     <font>
+                        <Font name="Dubai Bold" size="22.0" />
+                     </font>
+                  </Text>
+                  <FontAwesomeIcon fill="#efefef" glyphName="SHOPPING_CART" layoutX="115.0" layoutY="233.0" size="120" />
+               </children>
+            </AnchorPane>
+            <Pane fx:id="registerPane" layoutX="5.0" layoutY="-1.0" prefHeight="469.0" prefWidth="340.0">
+               <children>
+                  <Text fill="#37afe7" layoutX="122.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Buat Akun">
+                     <font>
+                        <Font name="Tahoma Bold" size="20.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="84.0" fitWidth="160.0" layoutX="140.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@register.png" />
+                     </image>
+                  </ImageView>
+                  <TextField fx:id="Rjabatan" alignment="CENTER" layoutX="50.0" layoutY="257.0" prefHeight="27.0" prefWidth="115.0" promptText="Jabatan            " style="-fx-background-color: transparent; -fx-border-color: #37afe7; -fx-border-width: 0px 0px 2px 0px; -fx-text-fill: #3f704d;">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></TextField>
+                  <TextField fx:id="Rusername" layoutX="108.0" layoutY="150.0" promptText="Username" style="-fx-background-color: transparent; -fx-border-color: #37afe7; -fx-border-width: 0px 0px 2px 0px; -fx-text-fill: #3f704d;">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></TextField>
+                  <TextField fx:id="Rpassword" layoutX="108.0" layoutY="207.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #37afe7; -fx-border-width: 0px 0px 2px 0px; -fx-text-fill: #3f704d;">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></TextField>
+                  <TextField fx:id="Rnama" alignment="CENTER" layoutX="206.0" layoutY="257.0" prefHeight="27.0" prefWidth="130.0" promptText="Nama Lengkap" style="-fx-background-color: transparent; -fx-border-color: #37afe7; -fx-border-width: 0px 0px 2px 0px; -fx-text-fill: #3f704d;">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></TextField>
+                  <TextField fx:id="Ralamat" alignment="CENTER" layoutX="206.0" layoutY="309.0" prefHeight="27.0" prefWidth="130.0" promptText="Alamat" style="-fx-background-color: transparent; -fx-border-color: #37afe7; -fx-border-width: 0px 0px 2px 0px; -fx-text-fill: #3f704d;">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></TextField>
+                  <TextField fx:id="Rtelepon" alignment="CENTER" layoutX="50.0" layoutY="309.0" prefHeight="27.0" prefWidth="115.0" promptText="Nomor Telepon " style="-fx-background-color: transparent; -fx-border-color: #37afe7; -fx-border-width: 0px 0px 2px 0px; -fx-text-fill: #3f704d;">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></TextField>
+                  <Button layoutX="227.0" layoutY="374.0" mnemonicParsing="false" onAction="#btnBackToLogin" prefHeight="40.0" prefWidth="88.0" style="-fx-background-color: #37afe7;" text="Kembali " textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="12.0" />
+                     </font></Button>
+                  <Button layoutX="62.0" layoutY="374.0" mnemonicParsing="false" onAction="#btnBuatAkun" prefHeight="40.0" prefWidth="92.0" style="-fx-background-color: #37afe7;" text="Simpan Data" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="12.0" />
+                     </font></Button>
+                  <FontAwesomeIcon fill="#37afe7" glyphName="USER" layoutX="75.0" layoutY="173.0" size="20" />
+                  <FontAwesomeIcon fill="#37afe7" glyphName="KEY" layoutX="73.0" layoutY="230.0" size="20" />
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="178.0" layoutY="258.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@id-card.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="24.0" fitWidth="27.0" layoutX="26.0" layoutY="261.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@businessman.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="24.0" fitWidth="27.0" layoutX="24.0" layoutY="313.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@phone.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="24.0" fitWidth="27.0" layoutX="181.0" layoutY="314.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@placeholder.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+   </left>
 </BorderPane>
