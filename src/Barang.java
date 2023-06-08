@@ -5,5 +5,6 @@ public class Barang {
     private String Jenis;
     private double Harga;
     private int Stok;
+    private int Tgl_Kadaluarsa;
 
 }
