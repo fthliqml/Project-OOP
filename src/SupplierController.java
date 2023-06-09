@@ -10,11 +10,37 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 public class SupplierController {
+    @FXML
+    private TableColumn<?, ?> hargaCol;
+
+    @FXML
+    private TableColumn<?, ?> idCol;
+
+    @FXML
+    private TableColumn<?, ?> jenisCol;
+
+    @FXML
+    private TableColumn<?, ?> kadaluarsaCol;
+
+    @FXML
+    private TableColumn<?, ?> merkCol;
+
+    @FXML
+    private TableColumn<?, ?> namabarangCol;
+
+    @FXML
+    private TableColumn<?, ?> stokCol;
+
+    @FXML
+    private TableView<?> tableSupplier;
+    
     private Stage stage;
     private Scene scene;
     private Parent root;
