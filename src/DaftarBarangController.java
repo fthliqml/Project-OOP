@@ -9,6 +9,7 @@ import java.util.Date;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
+import javafx.animation.TranslateTransition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -20,13 +21,17 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import javafx.util.Duration;
 
 public class DaftarBarangController implements Initializable {
     private Stage stage;
@@ -35,6 +40,49 @@ public class DaftarBarangController implements Initializable {
     private double xoffset = 0;
     private double yoffset = 0;
 
+    @FXML
+    private Pane sliderNav;
+
+    @FXML
+    private ImageView closeNav1;
+    @FXML
+    private ImageView img1;
+    @FXML
+    private ImageView img2;
+    @FXML
+    private ImageView img3;
+    @FXML
+    private ImageView img4;
+    @FXML
+    private ImageView img5;
+
+    @FXML
+    private Pane openNav;
+    @FXML
+    private ImageView openNavimg;
+    @FXML
+    private ImageView imgPengguna;
+    @FXML
+    private ImageView imgBarang;
+    @FXML
+    private ImageView imgSupplier;
+    @FXML
+    private ImageView imgPenjualan;
+    @FXML
+    private ImageView imgLogout;
+    
+    @FXML
+    private Button closeNav;
+    @FXML
+    private Button penggunaID;
+    @FXML
+    private Button barangID;
+    @FXML
+    private Button supplierID;
+    @FXML
+    private Button penjualanID;
+    @FXML
+    private Button logoutID;
     
     @FXML private TableColumn<DaftarBarang, String> hargaCol;
     @FXML private TableColumn<DaftarBarang, String> idCol;
@@ -43,9 +91,9 @@ public class DaftarBarangController implements Initializable {
     @FXML private TableColumn<DaftarBarang, String> merkCol;
     @FXML private TableColumn<DaftarBarang, String> namabarangCol;
     @FXML private TableColumn<DaftarBarang, Integer> stokCol;
+    @FXML private TableColumn<DaftarBarang, String> supplierCol;
     @FXML private TableView<DaftarBarang> tableBarang;
 
-    String query = null;
     ResultSet resultSet = null ;
     DaftarBarang barang = null ;
     
@@ -56,10 +104,109 @@ public class DaftarBarangController implements Initializable {
         try {
             refreshTable();
         } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+            System.out.println("ERROR");
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println("ERROR");
         }
+
+        
+        openNavimg.setVisible(false);
+        imgPengguna.setVisible(false);
+        imgBarang.setVisible(false);
+        imgSupplier.setVisible(false);
+        imgPenjualan.setVisible(false);
+        imgLogout.setVisible(false);
+
+        closeNav.setOnMouseClicked(event -> {
+            closeNav.setVisible(false);
+            closeNav1.setVisible(false);
+            img1.setVisible(false);
+            img2.setVisible(false);
+            img3.setVisible(false);
+            img4.setVisible(false);
+            img5.setVisible(false);
+            penggunaID.setVisible(false);
+            barangID.setVisible(false);
+            supplierID.setVisible(false);
+            penjualanID.setVisible(false);
+            logoutID.setVisible(false);
+
+            TranslateTransition slide = new TranslateTransition();
+                    slide.setDuration(Duration.seconds(0.5));
+                    slide.setNode(sliderNav);
+                    slide.setToX(-125);
+                    slide.play();
+                    sliderNav.setTranslateX(50);
+                    slide.setOnFinished((ActionEvent e)->{
+                        openNavimg.setVisible(true);
+                        imgPengguna.setVisible(true);
+                        imgBarang.setVisible(true);
+                        imgSupplier.setVisible(true);
+                        imgPenjualan.setVisible(true);
+                        imgLogout.setVisible(true);
+                    });
+        });
+
+        closeNav1.setOnMouseClicked(event -> {
+            closeNav.setVisible(false);
+            closeNav1.setVisible(false);
+            img1.setVisible(false);
+            img2.setVisible(false);
+            img3.setVisible(false);
+            img4.setVisible(false);
+            img5.setVisible(false);
+            penggunaID.setVisible(false);
+            barangID.setVisible(false);
+            supplierID.setVisible(false);
+            penjualanID.setVisible(false);
+            logoutID.setVisible(false);
+
+            TranslateTransition slide = new TranslateTransition();
+                    slide.setDuration(Duration.seconds(0.5));
+                    slide.setNode(sliderNav);
+                    slide.setToX(-125);
+                    slide.play();
+                    sliderNav.setTranslateX(50);
+                    slide.setOnFinished((ActionEvent e)->{
+                        openNavimg.setVisible(true);
+                        imgPengguna.setVisible(true);
+                        imgBarang.setVisible(true);
+                        imgSupplier.setVisible(true);
+                        imgPenjualan.setVisible(true);
+                        imgLogout.setVisible(true);
+                    });
+        });
+
+        openNav.setOnMouseClicked(event -> {
+            openNavimg.setVisible(false);
+            imgPengguna.setVisible(false);
+            imgBarang.setVisible(false);
+            imgSupplier.setVisible(false);
+            imgPenjualan.setVisible(false);
+            imgLogout.setVisible(false);
+            closeNav.setVisible(true);
+            closeNav1.setVisible(true);
+            img1.setVisible(true);
+            img2.setVisible(true);
+            img3.setVisible(true);
+            img4.setVisible(true);
+            img5.setVisible(true);
+            penggunaID.setVisible(true);
+            barangID.setVisible(true);
+            supplierID.setVisible(true);
+            penjualanID.setVisible(true);
+            logoutID.setVisible(true);
+
+            TranslateTransition slide = new TranslateTransition();
+                    slide.setDuration(Duration.seconds(0.5));
+                    slide.setNode(sliderNav);
+                    slide.setToX(0);
+                    slide.play();
+                    sliderNav.setTranslateX(50);
+                    slide.setOnFinished((ActionEvent e)->{
+                    });
+        });
+
     }
 
     private void refreshTable() throws SQLException, ClassNotFoundException{
@@ -80,7 +227,8 @@ public class DaftarBarangController implements Initializable {
                 resultSet.getString("Jenis"), 
                 resultSet.getInt("Stok"), 
                 resultSet.getString("Harga"), 
-                resultSet.getDate("Tanggal")));
+                resultSet.getDate("Tanggal"),
+                resultSet.getString("Supplier")));
                 tableBarang.setItems(BarangList);
         }
 
@@ -91,6 +239,7 @@ public class DaftarBarangController implements Initializable {
         stokCol.setCellValueFactory(new PropertyValueFactory<>("Stok"));
         hargaCol.setCellValueFactory(new PropertyValueFactory<>("Harga"));
         kadaluarsaCol.setCellValueFactory(new PropertyValueFactory<>("Tanggal"));
+        supplierCol.setCellValueFactory(new PropertyValueFactory<>("Supplier"));
 
     }
     

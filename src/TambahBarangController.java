@@ -42,6 +42,8 @@ public class TambahBarangController implements Initializable{
 
     @FXML private ChoiceBox <String> boxJenis;
     private String [] jenis = {"Makanan", "Minuman", "Bahan Baku"};
+
+    @FXML private ChoiceBox <String> boxSupplier;
     
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
@@ -94,7 +96,7 @@ public class TambahBarangController implements Initializable{
             PreparedStatement insert;
             Class.forName("com.mysql.cj.jdbc.Driver");
             con1 = DriverManager.getConnection("jdbc:mysql://localhost/pbo project", "root", "");
-            insert = con1.prepareStatement("insert into barang(ID,Barang,Merk,Jenis,Stok,Harga,Tanggal)values(?,?,?,?,?,?,?)");
+            insert = con1.prepareStatement("insert into barang(ID,Barang,Merk,Jenis,Stok,Harga,Tanggal,Supplier)values(?,?,?,?,?,?,?,?)");
             java.sql.Date Date = java.sql.Date.valueOf(tfDate.getValue());
             
             //Save to Database
@@ -105,6 +107,7 @@ public class TambahBarangController implements Initializable{
             insert.setInt(5, stokInt());
             insert.setString(6, tfHarga.getText());
             insert.setDate(7, Date);
+            insert.setString(8, "ISI SUPPLIER");
             insert.executeUpdate();
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);

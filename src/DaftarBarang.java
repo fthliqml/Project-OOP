@@ -8,8 +8,9 @@ public class DaftarBarang extends AbstractBarang {
     private String Harga;
     private int Stok;
     private Date Tanggal_Kadaluarsa;
+    private String Supplier;
 
-    public DaftarBarang(String Id_Barang, String Barang, String Merk, String Jenis, int Stok, String Harga,  Date Tanggal_Kadaluarsa){
+    public DaftarBarang(String Id_Barang, String Barang, String Merk, String Jenis, int Stok, String Harga,  Date Tanggal_Kadaluarsa, String Supplier){
         this.ID_Barang=Id_Barang;
         this.Barang=Barang;
         this.Merk=Merk;
@@ -17,6 +18,7 @@ public class DaftarBarang extends AbstractBarang {
         this.Stok=Stok;
         this.Harga=Harga;
         this.Tanggal_Kadaluarsa=Tanggal_Kadaluarsa;
+        this.Supplier=Supplier;
     }
 
     @Override
@@ -46,6 +48,10 @@ public class DaftarBarang extends AbstractBarang {
     @Override
     public Date getTanggal(){
         return Tanggal_Kadaluarsa;
+    }
+    @Override
+    public String getSupplier(){
+        return Supplier;
     }
     @Override
     public void macamBarang() {

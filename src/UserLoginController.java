@@ -234,7 +234,6 @@ public class UserLoginController implements Initializable {
             }
         }
         catch (Exception e) {
-            // TODO: handle exception
         }
     } 
 

@@ -1,12 +1,12 @@
 import java.util.ArrayList;
 
 public class Pengguna {
-    public String jabatan;
-    public String nama;
-    public String telepon;
-    public String Alamat;
-    public String username;
-    public String password;
+    private String jabatan;
+    private String nama;
+    private String telepon;
+    private String Alamat;
+    private String username;
+    private String password;
 
     static ArrayList<String> jabatanlist = new ArrayList<String>();
     static ArrayList<String> namalist = new ArrayList<String>();
