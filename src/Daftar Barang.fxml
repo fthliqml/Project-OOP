@@ -9,86 +9,120 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="788.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DaftarBarangController">
-   <left>
-      <AnchorPane fx:id="Menu" prefHeight="602.0" prefWidth="165.0" style="-fx-background-color: #3f704d; -fx-border-color: #ffff; -fx-border-width: 0px 2px 0px 0px;" BorderPane.alignment="CENTER">
-         <children>
-            <Button layoutX="7.0" layoutY="161.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="150.0" style="-fx-background-color: #d5e3d0; -fx-border-color: #ffffff; -fx-border-width: 0px 0px 2px 0px;" text="       DAFTAR BARANG" textFill="#3f704d" />
-            <Button layoutX="7.0" layoutY="211.0" mnemonicParsing="false" onAction="#btnSupplier" prefHeight="51.0" prefWidth="150.0" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-width: 0px 0px 2px 0px;" text="SUPPLIER     " textFill="WHITE" />
-            <Button layoutX="7.0" layoutY="112.0" mnemonicParsing="false" onAction="#btnPengguna" prefHeight="51.0" prefWidth="150.0" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-width: 0px 0px 2px 0px;" text="PENGGUNA " textFill="WHITE" />
-            <Button layoutX="7.0" layoutY="261.0" mnemonicParsing="false" onAction="#btnTransaksi" prefHeight="51.0" prefWidth="150.0" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-width: 0px 0px 2px 0px;" text="PENJUALAN  " textFill="WHITE" />
-            <Button alignment="BOTTOM_RIGHT" layoutX="32.0" layoutY="24.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="100.0" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-width: 0px 0px 1px 0px;" text="Menu   " textFill="#d5e3d0">
-               <font>
-                  <Font size="16.0" />
-               </font></Button>
-            <Button layoutX="17.0" layoutY="403.0" mnemonicParsing="false" onAction="#btnLogout" prefHeight="51.0" prefWidth="130.0" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-width: 0px 0px 2px 0px;" text="Logout" textFill="WHITE" />
-            <ImageView fitHeight="23.0" fitWidth="27.0" layoutX="41.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@main-menu.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="24.0" fitWidth="27.0" layoutX="20.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@guest-list.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="24.0" fitWidth="27.0" layoutX="20.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@to-do-list.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="24.0" fitWidth="27.0" layoutX="20.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@deal.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="24.0" fitWidth="27.0" layoutX="20.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@sales.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="24.0" fitWidth="27.0" layoutX="33.0" layoutY="417.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@logout.png" />
-               </image>
-            </ImageView>
-         </children>
-      </AnchorPane>
-   </left>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="788.0" style="-fx-background-color: #d5e3d0;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DaftarBarangController">
    <right>
       <AnchorPane prefHeight="602.0" prefWidth="601.0" BorderPane.alignment="CENTER">
          <children>
-            <AnchorPane prefHeight="601.0" prefWidth="622.0" style="-fx-background-color: #d5e3d0; -fx-border-width: 0px 0px 2px 0px; -fx-border-color: #ffffff;">
+            <AnchorPane layoutX="-148.0" prefHeight="602.0" prefWidth="788.0" style="-fx-background-color: #d5e3d0; -fx-border-width: 0px 0px 2px 0px; -fx-border-color: #ffffff;">
                <children>
-                  <Button layoutX="594.0" layoutY="2.0" mnemonicParsing="false" onAction="#btnExit" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: transparent;">
+                  <Button layoutX="760.0" layoutY="2.0" mnemonicParsing="false" onAction="#btnExit" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: transparent;">
                      <graphic>
                         <FontAwesomeIcon fill="#3f704d" glyphName="CLOSE" size="15" />
                      </graphic>
                   </Button>
-                  <Button layoutX="487.0" layoutY="522.0" mnemonicParsing="false" onAction="#btnTambah" prefHeight="42.0" prefWidth="98.0" style="-fx-background-color: #3f704d; -fx-border-color: #d5e3d0; -fx-border-width: 0px 0px 5px 5px;" text="Tambah" textFill="WHITE" />
-                  <TableView fx:id="tableBarang" layoutX="24.0" layoutY="85.0" prefHeight="420.0" prefWidth="574.0" stylesheets="@TableViewStyle.css">
+                  <Button layoutX="646.0" layoutY="515.0" mnemonicParsing="false" onAction="#btnTambah" prefHeight="42.0" prefWidth="98.0" style="-fx-background-color: #3f704d; -fx-border-color: #d5e3d0; -fx-border-width: 0px 0px 5px 5px;" text="Tambah" textFill="WHITE" />
+                  <TableView fx:id="tableBarang" layoutX="55.0" layoutY="78.0" prefHeight="374.0" prefWidth="694.0" stylesheets="@TableViewStyle.css">
                     <columns>
                       <TableColumn fx:id="idCol" editable="false" prefWidth="43.199951171875" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="ID" />
-                      <TableColumn fx:id="namabarangCol" editable="false" prefWidth="96.80004119873047" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Nama Barang" />
-                        <TableColumn fx:id="merkCol" editable="false" prefWidth="97.60003662109375" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Merk" />
-                        <TableColumn fx:id="jenisCol" editable="false" prefWidth="80.00003051757812" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Jenis" />
-                        <TableColumn fx:id="stokCol" editable="false" prefWidth="44.79998779296875" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Stok" />
-                        <TableColumn fx:id="hargaCol" editable="false" prefWidth="95.20001220703125" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Harga Satuan" />
-                        <TableColumn fx:id="kadaluarsaCol" editable="false" prefWidth="119.1999572753906" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Tgl. Kadaluarsa" />
+                      <TableColumn fx:id="namabarangCol" editable="false" prefWidth="113.60003662109375" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Nama Barang" />
+                        <TableColumn fx:id="merkCol" editable="false" prefWidth="87.99993896484375" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Merk" />
+                        <TableColumn fx:id="jenisCol" editable="false" prefWidth="73.60003662109375" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Jenis" />
+                        <TableColumn fx:id="stokCol" editable="false" prefWidth="59.999969482421875" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Stok" />
+                        <TableColumn fx:id="hargaCol" editable="false" prefWidth="92.79998779296875" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Harga Satuan" />
+                        <TableColumn fx:id="kadaluarsaCol" editable="false" prefWidth="92.79998779296875" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Tgl. Kadaluarsa" />
+                        <TableColumn fx:id="supplierCol" editable="false" prefWidth="127.19997558593752" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Supplier" />
                     </columns>
                   </TableView>
-                  <FontAwesomeIcon fill="#d5e3d0" glyphName="ANGLE_RIGHT" layoutX="567.0" layoutY="550.0" size="30" />
-                  <Label layoutX="181.0" layoutY="22.0" text="LIST BARANG TOKO" textFill="#3f704d">
+                  <FontAwesomeIcon fill="#d5e3d0" glyphName="ANGLE_RIGHT" layoutX="722.0" layoutY="543.0" size="30" />
+                  <Label layoutX="282.0" layoutY="21.0" text="LIST BARANG TOKO" textFill="#3f704d">
                      <font>
                         <Font name="Dubai Bold" size="22.0" />
                      </font>
                   </Label>
-                  <FontAwesomeIcon fill="#3f704d" glyphName="ARCHIVE" layoutX="386.0" layoutY="56.0" size="35" />
+                  <FontAwesomeIcon fill="#3f704d" glyphName="ARCHIVE" layoutX="487.0" layoutY="55.0" size="35" />
                </children>
             </AnchorPane>
          </children>
       </AnchorPane>
    </right>
+   <left>
+      <Pane fx:id="sliderNav" prefHeight="602.0" prefWidth="165.0" style="-fx-background-color: #3f704d; -fx-border-color: #ffff; -fx-border-width: 0px 2px 0px 0px;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="barangID" layoutX="7.0" layoutY="161.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="150.5" style="-fx-background-color: #d5e3d0; -fx-border-color: #ffffff; -fx-border-width: 0px 0px 2px 0px;" text="       DAFTAR BARANG" textFill="#3f704d" />
+            <Button fx:id="supplierID" layoutX="7.0" layoutY="211.0" mnemonicParsing="false" onAction="#btnSupplier" prefHeight="51.0" prefWidth="150.5" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-width: 0px 0px 2px 0px;" text="SUPPLIER     " textFill="WHITE" />
+            <Button fx:id="penggunaID" layoutX="7.0" layoutY="112.0" mnemonicParsing="false" onAction="#btnPengguna" prefHeight="51.0" prefWidth="150.5" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-width: 0px 0px 2px 0px;" text="PENGGUNA " textFill="WHITE" />
+            <Button fx:id="penjualanID" layoutX="7.0" layoutY="261.0" mnemonicParsing="false" onAction="#btnTransaksi" prefHeight="51.0" prefWidth="150.5" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-width: 0px 0px 2px 0px;" text="PENJUALAN  " textFill="WHITE" />
+            <ImageView fx:id="closeNav1" fitHeight="23.0" fitWidth="27.0" layoutX="41.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@main-menu.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="img1" fitHeight="24.0" fitWidth="27.0" layoutX="20.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@guest-list.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="img2" fitHeight="24.0" fitWidth="27.0" layoutX="20.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@to-do-list.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="img3" fitHeight="24.0" fitWidth="27.0" layoutX="20.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@deal.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="img4" fitHeight="24.0" fitWidth="27.0" layoutX="20.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@sales.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="logoutID" layoutX="17.0" layoutY="403.0" mnemonicParsing="false" onAction="#btnLogout" prefHeight="51.0" prefWidth="130.5" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-width: 0px 0px 2px 0px;" text="Logout" textFill="WHITE" />
+            <Button fx:id="closeNav" alignment="BOTTOM_RIGHT" layoutX="32.0" layoutY="24.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="100.0" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-width: 0px 0px 1px 0px;" text="Menu   " textFill="#d5e3d0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <ImageView fx:id="img5" fitHeight="24.0" fitWidth="27.0" layoutX="33.0" layoutY="417.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@logout.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="openNavimg" fitHeight="23.0" fitWidth="27.0" layoutX="134.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@main-menu.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgPengguna" fitHeight="24.0" fitWidth="27.0" layoutX="134.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@guest-list.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgBarang" fitHeight="24.0" fitWidth="27.0" layoutX="134.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@to-do-list.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgSupplier" fitHeight="24.0" fitWidth="27.0" layoutX="134.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@deal.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgPenjualan" fitHeight="24.0" fitWidth="27.0" layoutX="134.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@sales.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgLogout" fitHeight="24.0" fitWidth="27.0" layoutX="136.0" layoutY="417.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@logout.png" />
+               </image>
+            </ImageView>
+            <Pane fx:id="openNav" layoutX="129.0" layoutY="-7.0" prefHeight="602.0" prefWidth="35.0" style="-fx-background-color: transparent;" />
+         </children>
+      </Pane>
+   </left>
 </BorderPane>
