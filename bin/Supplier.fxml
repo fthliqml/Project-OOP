@@ -77,7 +77,7 @@
                         <TableColumn fx:id="stokCol" editable="false" prefWidth="164.00009155273438" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Alamat" />
                      </columns>
                   </TableView>
-                  <AnchorPane layoutX="455.0" layoutY="102.0" prefHeight="100.0" prefWidth="74.0" style="-fx-background-color: #e4ede1;" styleClass="hollow">
+                  <AnchorPane layoutX="455.0" layoutY="102.0" prefHeight="100.0" prefWidth="74.0" style="-fx-background-color: #e4ede1;" styleClass="hollow" stylesheets="@Shadow.css">
                      <children>
                         <Label alignment="CENTER" layoutX="18.0" layoutY="74.0" prefHeight="19.0" prefWidth="46.0" text="Tambah" textFill="#3f704d">
                            <font>
@@ -92,7 +92,7 @@
                         </ImageView>
                      </children>
                   </AnchorPane>
-                  <AnchorPane layoutX="269.0" layoutY="102.0" prefHeight="100.0" prefWidth="74.0" style="-fx-background-color: e4ede1;" styleClass="hollow">
+                  <AnchorPane layoutX="269.0" layoutY="102.0" prefHeight="100.0" prefWidth="74.0" style="-fx-background-color: e4ede1;" styleClass="hollow" stylesheets="@Shadow.css">
                      <children>
                         <Label alignment="CENTER" layoutX="18.0" layoutY="76.0" prefHeight="19.0" prefWidth="46.0" text="Edit" textFill="#3f704d">
                            <font>
@@ -107,7 +107,7 @@
                         </ImageView>
                      </children>
                   </AnchorPane>
-                  <AnchorPane layoutX="82.0" layoutY="101.0" prefHeight="100.0" prefWidth="85.0" style="-fx-background-color: e4ede1;" styleClass="hollow">
+                  <AnchorPane layoutX="82.0" layoutY="101.0" prefHeight="100.0" prefWidth="85.0" style="-fx-background-color: e4ede1;" styleClass="hollow" stylesheets="@Shadow.css">
                      <children>
                         <Label alignment="CENTER" layoutX="18.0" layoutY="77.0" prefHeight="19.0" prefWidth="46.0" text="Reset" textFill="#3f704d">
                            <font>
@@ -122,7 +122,7 @@
                         </ImageView>
                      </children>
                   </AnchorPane>
-                  <AnchorPane layoutX="153.0" layoutY="141.0" prefHeight="398.0" prefWidth="315.0" style="-fx-background-color: #e6ede4;" styleClass="hollow">
+                  <AnchorPane layoutX="153.0" layoutY="136.0" prefHeight="398.0" prefWidth="315.0" style="-fx-background-color: #e6ede4;" styleClass="hollow" stylesheets="@Shadow.css">
                      <children>
                         <Label alignment="CENTER" layoutX="24.0" layoutY="10.0" prefHeight="22.0" prefWidth="269.0" text="MENAMBAHKAN SUPPLIER" textAlignment="CENTER" textFill="#3f704d">
                            <font>
