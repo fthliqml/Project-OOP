@@ -72,7 +72,7 @@
             </ImageView>
             <ImageView fx:id="img3" fitHeight="24.0" fitWidth="27.0" layoutX="20.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@deal.png" />
+                  <Image url="@supplier.png" />
                </image>
             </ImageView>
             <ImageView fx:id="img4" fitHeight="24.0" fitWidth="27.0" layoutX="20.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">
@@ -108,7 +108,7 @@
             </ImageView>
             <ImageView fx:id="imgSupplier" fitHeight="24.0" fitWidth="27.0" layoutX="134.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@deal.png" />
+                  <Image url="@supplier.png" />
                </image>
             </ImageView>
             <ImageView fx:id="imgPenjualan" fitHeight="24.0" fitWidth="27.0" layoutX="134.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">

@@ -16,15 +16,15 @@
    <left>
       <AnchorPane fx:id="Menu" prefHeight="602.0" prefWidth="165.0" style="-fx-background-color: #3f704d; -fx-border-color: #ffff; -fx-border-width: 0px 2px 0px 0px;" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="7.0" layoutY="161.0" mnemonicParsing="false" onAction="#btnBarang" prefHeight="51.0" prefWidth="150.0" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-width: 0px 0px 2px 0px;" text="       DAFTAR BARANG" textFill="WHITE" />
-            <Button layoutX="7.0" layoutY="211.0" mnemonicParsing="false" onAction="#btnSupplier" prefHeight="51.0" prefWidth="150.0" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-width: 0px 0px 2px 0px;" text="SUPPLIER     " textFill="WHITE" />
+            <Button layoutX="7.0" layoutY="161.0" mnemonicParsing="false" onAction="#btnBarang" prefHeight="51.0" prefWidth="150.0" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-width: 0px 0px 2px 0px;" styleClass="sidebarItem" text="       DAFTAR BARANG" textFill="WHITE" />
+            <Button layoutX="7.0" layoutY="211.0" mnemonicParsing="false" onAction="#btnSupplier" prefHeight="51.0" prefWidth="150.0" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-width: 0px 0px 2px 0px;" styleClass="sidebarItem" text="SUPPLIER     " textFill="WHITE" />
             <Button layoutX="7.0" layoutY="112.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="150.0" style="-fx-background-color: #d5e3d0; -fx-border-color: #ffffff; -fx-border-width: 0px 0px 2px 0px;" text="PENGGUNA " textFill="#3f704d" />
-            <Button layoutX="7.0" layoutY="261.0" mnemonicParsing="false" onAction="#btnTransaksi" prefHeight="51.0" prefWidth="150.0" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-width: 0px 0px 2px 0px;" text="PENJUALAN  " textFill="WHITE" />
+            <Button layoutX="7.0" layoutY="261.0" mnemonicParsing="false" onAction="#btnTransaksi" prefHeight="51.0" prefWidth="150.0" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-width: 0px 0px 2px 0px;" styleClass="sidebarItem" text="PENJUALAN  " textFill="WHITE" />
             <Button alignment="BOTTOM_RIGHT" layoutX="32.0" layoutY="24.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="100.0" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-width: 0px 0px 1px 0px;" text="Menu   " textFill="#d5e3d0">
                <font>
                   <Font size="16.0" />
                </font></Button>
-            <Button layoutX="17.0" layoutY="403.0" mnemonicParsing="false" onAction="#btnLogout" prefHeight="51.0" prefWidth="130.0" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-width: 0px 0px 2px 0px;" text="Logout" textFill="WHITE" />
+            <Button layoutX="17.0" layoutY="403.0" mnemonicParsing="false" onAction="#btnLogout" prefHeight="51.0" prefWidth="130.0" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-width: 0px 0px 2px 0px;" styleClass="sidebarItem" text="Logout" textFill="WHITE" />
             <ImageView fitHeight="23.0" fitWidth="27.0" layoutX="41.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@main-menu.png" />
@@ -42,7 +42,7 @@
             </ImageView>
             <ImageView fitHeight="24.0" fitWidth="27.0" layoutX="20.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@deal.png" />
+                  <Image url="@supplier.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="24.0" fitWidth="27.0" layoutX="20.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">

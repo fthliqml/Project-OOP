@@ -2,8 +2,10 @@
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -41,7 +43,7 @@
             </ImageView>
             <ImageView fitHeight="24.0" fitWidth="27.0" layoutX="20.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@deal.png" />
+                  <Image url="@supplier.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="24.0" fitWidth="27.0" layoutX="20.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">
@@ -67,17 +69,153 @@
                         <FontAwesomeIcon fill="#3f704d" glyphName="CLOSE" size="15" />
                      </graphic>
                   </Button>
-                  <TableView fx:id="tableSupplier" layoutX="33.0" layoutY="277.0" prefHeight="287.0" prefWidth="574.0" stylesheets="@TableViewStyle.css">
+                  <TableView fx:id="tableSupplier" layoutX="24.0" layoutY="277.0" prefHeight="287.0" prefWidth="574.0" stylesheets="@TableViewStyle.css">
                      <columns>
-                        <TableColumn fx:id="idCol" editable="false" prefWidth="43.199951171875" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="ID" />
-                        <TableColumn fx:id="namabarangCol" editable="false" prefWidth="96.80004119873047" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Nama Barang" />
-                        <TableColumn fx:id="merkCol" editable="false" prefWidth="97.60003662109375" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Merk" />
-                        <TableColumn fx:id="jenisCol" editable="false" prefWidth="80.00003051757812" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Jenis" />
-                        <TableColumn fx:id="stokCol" editable="false" prefWidth="44.79998779296875" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Stok" />
-                        <TableColumn fx:id="hargaCol" editable="false" prefWidth="95.20001220703125" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Harga Satuan" />
-                        <TableColumn fx:id="kadaluarsaCol" editable="false" prefWidth="119.1999572753906" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Tgl. Kadaluarsa" />
+                        <TableColumn fx:id="namabarangCol" editable="false" prefWidth="91.20001220703125" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="ID" />
+                        <TableColumn fx:id="merkCol" editable="false" prefWidth="201.59996795654297" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Nama Supplier" />
+                        <TableColumn fx:id="jenisCol" editable="false" prefWidth="119.20004272460938" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Nomor Telepon" />
+                        <TableColumn fx:id="stokCol" editable="false" prefWidth="164.00009155273438" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Alamat" />
                      </columns>
                   </TableView>
+                  <AnchorPane layoutX="455.0" layoutY="102.0" prefHeight="100.0" prefWidth="74.0" style="-fx-background-color: #e4ede1;" styleClass="hollow">
+                     <children>
+                        <Label alignment="CENTER" layoutX="18.0" layoutY="74.0" prefHeight="19.0" prefWidth="46.0" text="Tambah" textFill="#3f704d">
+                           <font>
+                              <Font name="System Bold" size="10.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="17.0" layoutY="44.0" mnemonicParsing="false" prefHeight="113.6" prefWidth="84.8" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <ImageView fitHeight="51.0" fitWidth="54.0" layoutX="16.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Menambah.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="269.0" layoutY="102.0" prefHeight="100.0" prefWidth="74.0" style="-fx-background-color: e4ede1;" styleClass="hollow">
+                     <children>
+                        <Label alignment="CENTER" layoutX="18.0" layoutY="76.0" prefHeight="19.0" prefWidth="46.0" text="Edit" textFill="#3f704d">
+                           <font>
+                              <Font name="System Bold" size="10.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="17.0" layoutY="32.0" mnemonicParsing="false" prefHeight="113.6" prefWidth="84.8" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <ImageView fitHeight="48.0" fitWidth="50.0" layoutX="17.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@edit.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="82.0" layoutY="101.0" prefHeight="100.0" prefWidth="85.0" style="-fx-background-color: e4ede1;" styleClass="hollow">
+                     <children>
+                        <Label alignment="CENTER" layoutX="18.0" layoutY="77.0" prefHeight="19.0" prefWidth="46.0" text="Reset" textFill="#3f704d">
+                           <font>
+                              <Font name="System Bold" size="10.0" />
+                           </font>
+                        </Label>
+                        <Button layoutY="31.0" mnemonicParsing="false" prefHeight="112.8" prefWidth="85.6" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <ImageView fitHeight="54.0" fitWidth="55.0" layoutX="15.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@reset.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="153.0" layoutY="141.0" prefHeight="398.0" prefWidth="315.0" style="-fx-background-color: #e6ede4;" styleClass="hollow">
+                     <children>
+                        <Label alignment="CENTER" layoutX="24.0" layoutY="10.0" prefHeight="22.0" prefWidth="269.0" text="MENAMBAHKAN SUPPLIER" textAlignment="CENTER" textFill="#3f704d">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="tfNamaBarang" alignment="CENTER" layoutX="85.0" layoutY="101.0" prefHeight="30.0" prefWidth="147.0" promptText="ex : S001, S008, dsb" style="-fx-background-color: transparent; -fx-border-color: #3f704d; -fx-border-width: 0px 0px 2px 0px; -fx-text-fill: #8c918d;">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="tfNamaBarang1" alignment="CENTER" layoutX="62.0" layoutY="163.0" prefHeight="30.0" prefWidth="190.0" promptText="ex : Muhammad Ridho, dsb" style="-fx-background-color: transparent; -fx-border-color: #3f704d; -fx-border-width: 0px 0px 2px 0px; -fx-text-fill: #8c918d;">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="tfNamaBarang2" alignment="CENTER" layoutX="83.0" layoutY="225.0" prefHeight="30.0" prefWidth="147.0" promptText="ex : 08524725567, dsb" style="-fx-background-color: transparent; -fx-border-color: #3f704d; -fx-border-width: 0px 0px 2px 0px; -fx-text-fill: #8c918d;">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="tfNamaBarang11" alignment="CENTER" layoutX="55.0" layoutY="283.0" prefHeight="30.0" prefWidth="206.0" promptText="ex : Jalan Khalilullah RT. 013, dsb" style="-fx-background-color: transparent; -fx-border-color: #3f704d; -fx-border-width: 0px 0px 2px 0px; -fx-text-fill: #8c918d;">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </TextField>
+                        <Button layoutX="173.0" layoutY="337.0" mnemonicParsing="false" style="-fx-background-color: #3f704d;" text="Simpan" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="85.0" layoutY="337.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="61.0" style="-fx-background-color: #3f704d;" text="Reset" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="138.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@supplier.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" layoutX="14.0" layoutY="82.0" prefHeight="18.0" prefWidth="118.0" text="ID Supplier :" textAlignment="CENTER" textFill="#3f704d">
+                           <font>
+                              <Font name="Futura-Medium" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="26.0" layoutY="143.0" prefHeight="18.0" prefWidth="118.0" text="Nama Supplier :" textAlignment="CENTER" textFill="#3f704d">
+                           <font>
+                              <Font name="Futura-Medium" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="26.0" layoutY="205.0" prefHeight="18.0" prefWidth="118.0" text="Nomor Telepon :" textAlignment="CENTER" textFill="#3f704d">
+                           <font>
+                              <Font name="Futura-Medium" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="13.0" layoutY="263.0" prefHeight="18.0" prefWidth="97.0" text="Alamat :" textAlignment="CENTER" textFill="#3f704d">
+                           <font>
+                              <Font name="Futura-Medium" size="12.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="28.0" fitWidth="28.0" layoutX="53.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@number.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="24.0" fitWidth="27.0" layoutX="29.0" layoutY="289.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@placeholder.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="24.0" fitWidth="27.0" layoutX="54.0" layoutY="230.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@phone.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="29.0" fitWidth="30.0" layoutX="32.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@id-card.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <Label alignment="CENTER" layoutX="176.0" layoutY="25.0" prefHeight="22.0" prefWidth="269.0" text="Daftar Supplier" textAlignment="CENTER" textFill="#3f704d">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="189.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@supplier.png" />
+                     </image>
+                  </ImageView>
                </children>
             </AnchorPane>
          </children>
