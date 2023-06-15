@@ -1,3 +1,5 @@
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -8,7 +10,6 @@ import java.sql.SQLException;
 import java.util.Date;
 import java.util.Optional;
 import java.util.ResourceBundle;
-
 import javafx.animation.TranslateTransition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -17,20 +18,25 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import javafx.util.Callback;
 import javafx.util.Duration;
 
 public class DaftarBarangController implements Initializable {
@@ -92,10 +98,12 @@ public class DaftarBarangController implements Initializable {
     @FXML private TableColumn<DaftarBarang, String> namabarangCol;
     @FXML private TableColumn<DaftarBarang, Integer> stokCol;
     @FXML private TableColumn<DaftarBarang, String> supplierCol;
+    @FXML private TableColumn<DaftarBarang, String> editCol;
     @FXML private TableView<DaftarBarang> tableBarang;
 
     ResultSet resultSet = null ;
     DaftarBarang barang = null ;
+    static int i;
     
     ObservableList<DaftarBarang> BarangList = FXCollections.observableArrayList();
 
@@ -103,6 +111,7 @@ public class DaftarBarangController implements Initializable {
     public void initialize(URL arg0, ResourceBundle arg1) {
         try {
             refreshTable();
+            editTable();
         } catch (ClassNotFoundException e) {
             System.out.println("ERROR");
         } catch (SQLException e) {
@@ -242,6 +251,61 @@ public class DaftarBarangController implements Initializable {
         supplierCol.setCellValueFactory(new PropertyValueFactory<>("Supplier"));
 
     }
+
+    void editTable(){
+        Callback<TableColumn<DaftarBarang, String>, TableCell<DaftarBarang, String>> cellFoctory = (TableColumn<DaftarBarang, String> param) -> {
+            final TableCell<DaftarBarang, String> cell = new TableCell<DaftarBarang, String>() {
+                @Override
+                public void updateItem(String item, boolean empty) {
+                    super.updateItem(item, empty);
+
+                    if (empty) {
+                        setGraphic(null);
+                        setText(null);
+
+                    } else {
+
+                        try {
+                            Image editIcon = new Image(new FileInputStream("D:\\Programming\\Java\\Big Project\\src\\edit.png"));
+                            ImageView editView = new ImageView(editIcon);
+                            editView.setFitHeight(20); 
+                            editView.setFitWidth(20);
+
+                            Image deleteIcon = new Image(new FileInputStream("D:\\Programming\\Java\\Big Project\\src\\trash.png"));
+                            ImageView deleteView = new ImageView(deleteIcon);
+                            deleteView.setFitHeight(24); 
+                            deleteView.setFitWidth(26);
+
+                            HBox managebtn = new HBox(editView, deleteView);
+                            managebtn.setStyle("-fx-alignment:center;"+"-fx-cursor:hand;");
+                            HBox.setMargin(editView, new Insets(2, 2, 0, 3));
+                            HBox.setMargin(deleteView, new Insets(2, 3, 0, 2));
+
+                            setGraphic(managebtn);
+                            setText(null);
+
+                        } catch (FileNotFoundException e) {
+                            // TODO Auto-generated catch block
+                            e.printStackTrace();
+                        }
+
+                    }
+                }
+
+            };
+
+            return cell;
+        };
+         editCol.setCellFactory(cellFoctory);
+         
+         
+    }
+
+    @FXML
+    void btnEdit(ActionEvent event) {
+        editTable();
+    }
+
     
     @FXML
     void btnLogout(ActionEvent event) throws IOException {

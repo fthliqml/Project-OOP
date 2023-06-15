@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
@@ -18,22 +19,27 @@
          <children>
             <AnchorPane layoutX="-148.0" prefHeight="602.0" prefWidth="788.0" style="-fx-background-color: #d5e3d0; -fx-border-width: 0px 0px 2px 0px; -fx-border-color: #ffffff;">
                <children>
-                  <Button layoutX="760.0" layoutY="2.0" mnemonicParsing="false" onAction="#btnExit" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: transparent;">
+                  <Button layoutX="760.0" layoutY="2.0" mnemonicParsing="false" onAction="#btnExit" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: transparent;" styleClass="btn">
                      <graphic>
-                        <FontAwesomeIcon fill="#3f704d" glyphName="CLOSE" size="15" />
+                        <FontAwesomeIcon fill="#3f704d" glyphName="CLOSE" size="15" styleClass="btn" />
                      </graphic>
                   </Button>
-                  <Button layoutX="646.0" layoutY="515.0" mnemonicParsing="false" onAction="#btnTambah" prefHeight="42.0" prefWidth="98.0" style="-fx-background-color: #3f704d; -fx-border-color: #d5e3d0; -fx-border-width: 0px 0px 5px 5px;" text="Tambah" textFill="WHITE" />
-                  <TableView fx:id="tableBarang" layoutX="55.0" layoutY="78.0" prefHeight="374.0" prefWidth="694.0" stylesheets="@TableViewStyle.css">
+                  <Button layoutX="646.0" layoutY="515.0" mnemonicParsing="false" onAction="#btnTambah" prefHeight="42.0" prefWidth="98.0" style="-fx-background-color: #3f704d; -fx-border-color: #d5e3d0; -fx-border-width: 0px 0px 3px 3px;" stylesheets="@Shadow.css" text="Tambah" textFill="WHITE">
+                     <styleClass>
+                        <String fx:value="hollow" />
+                        <String fx:value="btn" />
+                     </styleClass></Button>
+                  <TableView fx:id="tableBarang" layoutX="50.0" layoutY="78.0" prefHeight="374.0" prefWidth="732.0" styleClass="hollow" stylesheets="@TableViewStyle.css">
                     <columns>
                       <TableColumn fx:id="idCol" editable="false" prefWidth="43.199951171875" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="ID" />
                       <TableColumn fx:id="namabarangCol" editable="false" prefWidth="113.60003662109375" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Nama Barang" />
-                        <TableColumn fx:id="merkCol" editable="false" prefWidth="87.99993896484375" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Merk" />
-                        <TableColumn fx:id="jenisCol" editable="false" prefWidth="73.60003662109375" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Jenis" />
-                        <TableColumn fx:id="stokCol" editable="false" prefWidth="59.999969482421875" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Stok" />
-                        <TableColumn fx:id="hargaCol" editable="false" prefWidth="92.79998779296875" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Harga Satuan" />
-                        <TableColumn fx:id="kadaluarsaCol" editable="false" prefWidth="92.79998779296875" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Tgl. Kadaluarsa" />
-                        <TableColumn fx:id="supplierCol" editable="false" prefWidth="127.19997558593752" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Supplier" />
+                        <TableColumn fx:id="merkCol" editable="false" prefWidth="78.4000244140625" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Merk" />
+                        <TableColumn fx:id="jenisCol" editable="false" prefWidth="70.4000244140625" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Jenis" />
+                        <TableColumn fx:id="stokCol" editable="false" prefWidth="48.7999267578125" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Stok" />
+                        <TableColumn fx:id="hargaCol" editable="false" prefWidth="85.59991455078125" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Harga Satuan" />
+                        <TableColumn fx:id="kadaluarsaCol" editable="false" prefWidth="95.20004272460938" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Tgl. Kadaluarsa" />
+                        <TableColumn fx:id="supplierCol" editable="false" prefWidth="120.800048828125" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Supplier" />
+                        <TableColumn fx:id="editCol" editable="false" prefWidth="67.20001220703125" resizable="false" sortable="false" />
                     </columns>
                   </TableView>
                   <FontAwesomeIcon fill="#d5e3d0" glyphName="ANGLE_RIGHT" layoutX="722.0" layoutY="543.0" size="30" />
@@ -43,6 +49,11 @@
                      </font>
                   </Label>
                   <FontAwesomeIcon fill="#3f704d" glyphName="ARCHIVE" layoutX="487.0" layoutY="55.0" size="35" />
+                  <Button layoutX="70.0" layoutY="515.0" mnemonicParsing="false" onAction="#btnEdit" prefHeight="42.0" prefWidth="98.0" style="-fx-background-color: #3f704d; -fx-border-color: #d5e3d0; -fx-border-width: 0px 0px 3px 3px;" stylesheets="@Shadow.css" text="Edit" textFill="WHITE">
+                     <styleClass>
+                        <String fx:value="hollow" />
+                        <String fx:value="btn" />
+                     </styleClass></Button>
                </children>
             </AnchorPane>
          </children>

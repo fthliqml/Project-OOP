@@ -15,7 +15,7 @@ public class Supplier {
         this.Alamat=Alamat;
     }
     public String getID(){
-        return this.ID;
+        return ID;
     }
     public String getNama(){
         return this.Nama;

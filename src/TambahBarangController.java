@@ -3,6 +3,7 @@ import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -41,13 +42,34 @@ public class TambahBarangController implements Initializable{
     @FXML private TextField tfNamaBarang;
 
     @FXML private ChoiceBox <String> boxJenis;
-    private String [] jenis = {"Makanan", "Minuman", "Bahan Baku"};
+    private String [] jenis = {"Makanan", "Minuman", "Bahan Baku", "Bahan Penyedap"};
 
     @FXML private ChoiceBox <String> boxSupplier;
+
+    ResultSet resultSet = null ;
     
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
+        DaftarBarangController.i++;
+        try {
+            Connection connection;
+            PreparedStatement preparedStatement;
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost/pbo project", "root", "");
+            preparedStatement = connection.prepareStatement("SELECT * FROM `supplier`");
+            resultSet = preparedStatement.executeQuery();
+        if (DaftarBarangController.i == 1){
+            while (resultSet.next()){
+                Supplier.namaList.add(resultSet.getString("Nama"));
+            }
+        }
+
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+
         boxJenis.getItems().addAll(jenis);
+        boxSupplier.getItems().addAll(Supplier.namaList);
     }
     
     int stokInt(){
@@ -107,7 +129,7 @@ public class TambahBarangController implements Initializable{
             insert.setInt(5, stokInt());
             insert.setString(6, tfHarga.getText());
             insert.setDate(7, Date);
-            insert.setString(8, "ISI SUPPLIER");
+            insert.setString(8, boxSupplier.getValue());
             insert.executeUpdate();
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -122,6 +144,7 @@ public class TambahBarangController implements Initializable{
             tfStok.setText("");
             tfHarga.setText("");
             tfDate.setValue(null);
+            boxSupplier.setValue(null);
 
                 
             } catch (Exception e) {
@@ -135,6 +158,27 @@ public class TambahBarangController implements Initializable{
         }
        
     }
+
+    @FXML
+    void btnPengguna(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnSupplier(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnTransaksi(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnLogout(ActionEvent event) {
+
+    }
+
 
     @FXML
     void btnExit(ActionEvent event) {

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
 <?import javafx.scene.Group?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -19,20 +20,20 @@
       <AnchorPane fx:id="rightAnchor" prefHeight="500.0" prefWidth="350.0" style="-fx-background-color: #ffff;" BorderPane.alignment="CENTER">
          <children>
             <Group layoutX="140.0" layoutY="351.0" />
-            <TextField fx:id="tfUsername" layoutX="119.0" layoutY="221.0" promptText="Username" style="-fx-background-color: transparent; -fx-border-color: #37afe7; -fx-border-width: 0px 0px 2px 0px; -fx-text-fill: #3f704d;">
+            <TextField fx:id="tfUsername" layoutX="119.0" layoutY="217.0" promptText="Username" style="-fx-background-color: transparent; -fx-border-color: #37afe7; -fx-border-width: 0px 0px 2px 0px; -fx-text-fill: #3f704d;">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></TextField>
-            <FontAwesomeIcon fx:id="iconUser" fill="#37afe7" glyphName="USER" layoutX="87.0" layoutY="245.0" size="20" />
+            <FontAwesomeIcon fx:id="iconUser" fill="#37afe7" glyphName="USER" layoutX="87.0" layoutY="241.0" size="20" />
             <FontAwesomeIcon fx:id="IconKey" fill="#37afe7" glyphName="KEY" layoutX="85.0" layoutY="295.0" size="20" />
             <Text fx:id="labelAgentLogin" fill="#37afe7" layoutX="115.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Agent Login">
                <font>
                   <Font name="Tahoma Bold" size="20.0" />
                </font>
             </Text>
-            <Button layoutX="310.0" layoutY="7.0" mnemonicParsing="false" onAction="#btnExit" style="-fx-background-color: transparent;">
+            <Button layoutX="310.0" layoutY="7.0" mnemonicParsing="false" onAction="#btnExit" style="-fx-background-color: transparent;" styleClass="btn">
                <graphic>
-                  <FontAwesomeIcon fx:id="exitBlue" fill="#37afe7" glyphName="CLOSE" size="15" text="" />
+                  <FontAwesomeIcon fx:id="exitBlue" fill="#37afe7" glyphName="CLOSE" size="15" styleClass="btn" text="" />
                </graphic>
             </Button>
             <PasswordField fx:id="tfPassword" layoutX="119.0" layoutY="266.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #37afe7; -fx-border-width: 0px 0px 2px 0px; -fx-text-fill: #3f704d;">
@@ -40,15 +41,23 @@
                   <Font name="System Bold" size="12.0" />
                </font></PasswordField>
             <AnchorPane layoutX="336.0" layoutY="-13.0" prefHeight="500.0" prefWidth="15.0" style="-fx-background-color: #3f704d;" />
-            <Button fx:id="RegisterID" layoutX="80.0" layoutY="364.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="88.0" style="-fx-background-color: #37afe7;" text="Buat Akun" textFill="WHITE">
+            <Button fx:id="RegisterID" layoutX="77.0" layoutY="383.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="88.0" style="-fx-background-color: #37afe7;" stylesheets="@Shadow.css" text="Buat Akun" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
-               </font></Button>
-            <Button fx:id="btnLoginID" layoutX="192.0" layoutY="364.0" mnemonicParsing="false" onAction="#btnLogIn" prefHeight="40.0" prefWidth="88.0" style="-fx-background-color: #37afe7;" text="Login" textFill="WHITE">
+               </font>
+               <styleClass>
+                  <String fx:value="btn" />
+                  <String fx:value="hollow" />
+               </styleClass></Button>
+            <Button fx:id="btnLoginID" layoutX="189.0" layoutY="383.0" mnemonicParsing="false" onAction="#btnLogIn" prefHeight="40.0" prefWidth="88.0" style="-fx-background-color: #37afe7;" stylesheets="@Shadow.css" text="Login" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
-               </font></Button>
-            <Label fx:id="labelNote" layoutX="77.0" layoutY="339.0" text="Belum Punya Akun?" textFill="#3f704d">
+               </font>
+               <styleClass>
+                  <String fx:value="btn" />
+                  <String fx:value="hollow" />
+               </styleClass></Button>
+            <Label fx:id="labelNote" layoutX="74.0" layoutY="346.0" text="Belum Punya Akun?" textFill="#3f704d">
                <font>
                   <Font name="System Bold" size="10.0" />
                </font></Label>
@@ -72,9 +81,9 @@
             <AnchorPane layoutY="-1.0" prefHeight="470.0" prefWidth="15.0" style="-fx-background-color: #3f704d; -fx-border-color: #3f704d; -fx-border-width: 0px 0px 80px 0px;" />
             <AnchorPane fx:id="slider" layoutX="8.0" prefHeight="469.0" prefWidth="342.0" style="-fx-background-color: #3f704d;">
                <children>
-                  <Button layoutX="314.0" layoutY="-5.0" mnemonicParsing="false" onAction="#btnExit" style="-fx-background-color: transparent;">
+                  <Button layoutX="314.0" layoutY="-5.0" mnemonicParsing="false" onAction="#btnExit" style="-fx-background-color: transparent;" styleClass="btn">
                      <graphic>
-                        <FontAwesomeIcon fx:id="exitWhite" fill="WHITE" glyphName="CLOSE" size="15" text="" />
+                        <FontAwesomeIcon fx:id="exitWhite" fill="WHITE" glyphName="CLOSE" size="15" styleClass="btn" text="" />
                      </graphic>
                   </Button>
                   <Text fill="WHITE" layoutX="22.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PEMANTAUAN STOK BARANG">
@@ -121,14 +130,22 @@
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font></TextField>
-                  <Button layoutX="227.0" layoutY="374.0" mnemonicParsing="false" onAction="#btnBackToLogin" prefHeight="40.0" prefWidth="88.0" style="-fx-background-color: #37afe7;" text="Kembali " textFill="WHITE">
+                  <Button layoutX="227.0" layoutY="374.0" mnemonicParsing="false" onAction="#btnBackToLogin" prefHeight="40.0" prefWidth="88.0" style="-fx-background-color: #37afe7;" stylesheets="@Shadow.css" text="Kembali " textFill="WHITE">
                      <font>
                         <Font name="System Bold Italic" size="12.0" />
-                     </font></Button>
-                  <Button layoutX="62.0" layoutY="374.0" mnemonicParsing="false" onAction="#btnBuatAkun" prefHeight="40.0" prefWidth="92.0" style="-fx-background-color: #37afe7;" text="Simpan Data" textFill="WHITE">
+                     </font>
+                     <styleClass>
+                        <String fx:value="btn" />
+                        <String fx:value="hollow" />
+                     </styleClass></Button>
+                  <Button layoutX="56.0" layoutY="374.0" mnemonicParsing="false" onAction="#btnBuatAkun" prefHeight="40.0" prefWidth="98.0" style="-fx-background-color: #37afe7;" stylesheets="@Shadow.css" text="Simpan Data" textFill="WHITE">
                      <font>
                         <Font name="System Bold Italic" size="12.0" />
-                     </font></Button>
+                     </font>
+                     <styleClass>
+                        <String fx:value="btn" />
+                        <String fx:value="hollow" />
+                     </styleClass></Button>
                   <FontAwesomeIcon fill="#37afe7" glyphName="USER" layoutX="75.0" layoutY="173.0" size="20" />
                   <FontAwesomeIcon fill="#37afe7" glyphName="KEY" layoutX="73.0" layoutY="230.0" size="20" />
                   <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="178.0" layoutY="258.0" pickOnBounds="true" preserveRatio="true">

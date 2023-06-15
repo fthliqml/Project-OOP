@@ -1,3 +1,7 @@
+.btn:hover{
+    -fx-cursor:hand ;
+}
+
 .hollow {
     -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0 );
     -fx-padding: 10;
