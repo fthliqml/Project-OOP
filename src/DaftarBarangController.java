@@ -7,6 +7,9 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Date;
 import java.util.Optional;
 import java.util.ResourceBundle;
@@ -25,13 +28,17 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -89,6 +96,27 @@ public class DaftarBarangController implements Initializable {
     private Button penjualanID;
     @FXML
     private Button logoutID;
+
+    @FXML private DatePicker tfDate;
+
+    @FXML private TextField tfHarga;
+
+    @FXML private TextField tfID;
+
+    @FXML private TextField tfStok;
+
+    @FXML private TextField tfMerk;
+
+    @FXML private TextField tfNamaBarang;
+
+    @FXML private ChoiceBox <String> boxJenis;
+    private String [] jenis = {"Makanan", "Minuman", "Bahan Baku", "Bahan Penyedap"};
+
+    @FXML private ChoiceBox <String> boxSupplier;
+    
+    @FXML
+    private AnchorPane menambahkanPane;
+
     
     @FXML private TableColumn<DaftarBarang, String> hargaCol;
     @FXML private TableColumn<DaftarBarang, String> idCol;
@@ -104,12 +132,24 @@ public class DaftarBarangController implements Initializable {
     ResultSet resultSet = null ;
     DaftarBarang barang = null ;
     static int i;
+    private Boolean update;
+   
     
     ObservableList<DaftarBarang> BarangList = FXCollections.observableArrayList();
+    
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         try {
+            Connection connection;
+            PreparedStatement preparedStatement;
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost/pbo project", "root", "");
+            preparedStatement = connection.prepareStatement("SELECT * FROM `supplier`");
+            resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()){
+                Supplier.namaList.add(resultSet.getString("Nama"));
+                }
             refreshTable();
             editTable();
         } catch (ClassNotFoundException e) {
@@ -118,7 +158,10 @@ public class DaftarBarangController implements Initializable {
             System.out.println("ERROR");
         }
 
-        
+        boxJenis.getItems().addAll(jenis);
+        boxSupplier.getItems().addAll(Supplier.namaList);
+
+        menambahkanPane.setVisible(false);
         openNavimg.setVisible(false);
         imgPengguna.setVisible(false);
         imgBarang.setVisible(false);
@@ -218,6 +261,115 @@ public class DaftarBarangController implements Initializable {
 
     }
 
+    int stokInt(){
+        String s = tfStok.getText();
+        int i = Integer.valueOf(s);
+        return i;
+    }
+
+    void setTextField(String Id_Barang, String Barang, String Merk, String Jenis, int Stok, String Harga, LocalDate Tanggal_Kadaluarsa, String Supplier){
+        String stok = String.valueOf(Stok);
+        tfID.setText(Id_Barang);
+        tfNamaBarang.setText(Barang);
+        tfMerk.setText(Merk);
+        boxJenis.setValue(Jenis);
+        tfStok.setText(stok);
+        tfHarga.setText(Harga);
+        tfDate.setValue(Tanggal_Kadaluarsa);
+        boxSupplier.setValue(Supplier);
+    }
+
+    void setUpdate(Boolean b){
+        this.update=b;
+    }
+
+    @FXML
+    void btnSimpan(ActionEvent event) throws ClassNotFoundException, SQLException {
+        if (tfID.getText().isEmpty()||tfNamaBarang.getText().isEmpty()||tfMerk.getText().isEmpty()||boxJenis.getValue().isEmpty()||tfStok.getText().isEmpty()||tfHarga.getText().isEmpty()||tfDate.getValue()==null){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText(null);
+            alert.setContentText("Isi Semua Data");
+            alert.showAndWait();
+        }
+        else if (update==true){
+            try {
+                Connection connection;
+                PreparedStatement preparedStatement;
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                connection = DriverManager.getConnection("jdbc:mysql://localhost/pbo project", "root", "");
+                preparedStatement = connection.prepareStatement("UPDATE `barang` SET "
+                + "`ID`=?,"
+                + "`Barang`=?,"
+                + "`Merk`=?,"
+                + "`Jenis`=?," 
+                + "`Stok`=?,"
+                + "`Harga`=?,"
+                + "`Tanggal`=?,"
+                + "`Supplier`=? WHERE ID = ?");
+                java.sql.Date Date = java.sql.Date.valueOf(tfDate.getValue());
+
+                preparedStatement.setString(1, tfID.getText());
+                preparedStatement.setString(2, tfNamaBarang.getText());
+                preparedStatement.setString(3, tfMerk.getText());
+                preparedStatement.setString(4, boxJenis.getValue());
+                preparedStatement.setInt(5, stokInt());
+                preparedStatement.setString(6, tfHarga.getText());
+                preparedStatement.setDate(7, Date);
+                preparedStatement.setString(8, boxSupplier.getValue());
+                barang = tableBarang.getSelectionModel().getSelectedItem();
+                preparedStatement.setString(9, barang.getID());
+                preparedStatement.execute();
+
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setHeaderText(null);
+                alert.setContentText("Berhasil Mengedit Data");
+                alert.showAndWait();
+                refreshTable();
+                btnBatal(event);
+
+            } catch (Exception e) {
+                // TODO: handle exception
+                e.printStackTrace();
+            }
+        }
+        else { 
+            try {
+            Connection con1;
+            PreparedStatement insert;
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con1 = DriverManager.getConnection("jdbc:mysql://localhost/pbo project", "root", "");
+            insert = con1.prepareStatement("insert into barang(ID,Barang,Merk,Jenis,Stok,Harga,Tanggal,Supplier)values(?,?,?,?,?,?,?,?)");
+            java.sql.Date Date = java.sql.Date.valueOf(tfDate.getValue());
+            
+            //Save to Database
+            insert.setString(1, tfID.getText());
+            insert.setString(2, tfNamaBarang.getText());
+            insert.setString(3, tfMerk.getText());
+            insert.setString(4, boxJenis.getValue());
+            insert.setInt(5, stokInt());
+            insert.setString(6, tfHarga.getText());
+            insert.setDate(7, Date);
+            insert.setString(8, boxSupplier.getValue());
+            insert.executeUpdate();
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText(null);
+            alert.setContentText("Berhasil Menyimpan Data");
+            alert.showAndWait();
+            refreshTable();
+
+            setTextField(null, null, null, null, 0, null, null, null);
+            tfStok.setText(null);
+
+            } catch (Exception e) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setHeaderText(null);
+                alert.setContentText("Isi Data Dengan Format Yang Benar");
+                alert.showAndWait();
+            }
+        }
+    }
+
     private void refreshTable() throws SQLException, ClassNotFoundException{
         BarangList.clear();
 
@@ -268,8 +420,8 @@ public class DaftarBarangController implements Initializable {
                         try {
                             Image editIcon = new Image(new FileInputStream("D:\\Programming\\Java\\Big Project\\src\\edit.png"));
                             ImageView editView = new ImageView(editIcon);
-                            editView.setFitHeight(20); 
-                            editView.setFitWidth(20);
+                            editView.setFitHeight(22); 
+                            editView.setFitWidth(23);
 
                             Image deleteIcon = new Image(new FileInputStream("D:\\Programming\\Java\\Big Project\\src\\trash.png"));
                             ImageView deleteView = new ImageView(deleteIcon);
@@ -283,6 +435,50 @@ public class DaftarBarangController implements Initializable {
 
                             setGraphic(managebtn);
                             setText(null);
+
+                            deleteView.setOnMouseClicked((MouseEvent event) -> {
+                                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                                    alert.setX(650);
+                                    alert.setY(270);
+                                    alert.initStyle(StageStyle.UTILITY);
+                                    alert.setHeaderText(null);
+                                    alert.setContentText("Apakah Anda Yakin Ingin Menghapus?");
+                                    
+                                    Optional<ButtonType> result = alert.showAndWait();
+                                    if (result.get() == ButtonType.OK){
+                                        try {
+                                            Connection connection;
+                                            PreparedStatement preparedStatement;
+                                            Class.forName("com.mysql.cj.jdbc.Driver");
+                                            connection = DriverManager.getConnection("jdbc:mysql://localhost/pbo project", "root", "");
+                                            barang = tableBarang.getSelectionModel().getSelectedItem();
+                                            preparedStatement = connection.prepareStatement("DELETE FROM `barang` WHERE ID = ?");
+                                            preparedStatement.setString(1, barang.getID());
+                                            preparedStatement.execute();
+                                            refreshTable();
+                                            
+                                        } catch (SQLException | ClassNotFoundException ex) {
+                                            ex.printStackTrace();
+                                    
+                                            }
+                                    }
+                            
+                            });
+
+                            editView.setOnMouseClicked((MouseEvent event) -> {
+                                setUpdate(true);
+                                barang = tableBarang.getSelectionModel().getSelectedItem();
+                                menambahkanPane.setVisible(true);
+                                setTextField(
+                                            barang.getID(), 
+                                            barang.getBarang(), 
+                                            barang.getMerk(), 
+                                            barang.getJenis(), 
+                                            barang.getStok(), 
+                                            barang.getHarga(), 
+                                            convertToLocalDate(barang.getTanggal()), 
+                                            barang.getSupplier());
+                        });
 
                         } catch (FileNotFoundException e) {
                             // TODO Auto-generated catch block
@@ -298,18 +494,28 @@ public class DaftarBarangController implements Initializable {
         };
          editCol.setCellFactory(cellFoctory);
          
-         
+    }
+
+    public LocalDate convertToLocalDate(Date dateToConvert) {
+        return Instant.ofEpochMilli(dateToConvert.getTime()).atZone(ZoneId.systemDefault()).toLocalDate();
+    }
+    
+    @FXML
+    void btnTambah(ActionEvent event) throws IOException {
+        setUpdate(false);
+        menambahkanPane.setVisible(true);
     }
 
     @FXML
-    void btnEdit(ActionEvent event) {
-        editTable();
+    void btnBatal(ActionEvent event) throws IOException {
+        menambahkanPane.setVisible(false);
     }
 
-    
     @FXML
     void btnLogout(ActionEvent event) throws IOException {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setX(650);
+        alert.setY(270);
         alert.initStyle(StageStyle.UTILITY);
         alert.setHeaderText(null);
         alert.setContentText("Anda Yakin Ingin Keluar?");
@@ -339,31 +545,6 @@ public class DaftarBarangController implements Initializable {
         stage.setScene(scene);
         stage.show();
         }
-    }
-    @FXML
-    void btnTambah(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("Tambahkan Barang.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-
-        root.setOnMousePressed((EventHandler<? super MouseEvent>) new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event){
-                xoffset = event.getSceneX();
-                yoffset = event.getSceneY();
-            }
-        } );
-
-        root.setOnMouseDragged(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event){
-                stage.setX(event.getScreenX() - xoffset);
-                stage.setY(event.getScreenY() - yoffset);
-            }
-        } );
-        
-        stage.setScene(scene);
-        stage.show();
     }
 
     @FXML
@@ -459,6 +640,4 @@ public class DaftarBarangController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-
-
 }

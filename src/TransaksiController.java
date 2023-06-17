@@ -29,6 +29,8 @@ public class TransaksiController {
     @FXML
     void btnLogout(ActionEvent event) throws IOException {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setX(650);
+        alert.setY(270);
         alert.initStyle(StageStyle.UTILITY);
         alert.setHeaderText(null);
         alert.setContentText("Anda Yakin Ingin Keluar?");

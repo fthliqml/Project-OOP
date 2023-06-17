@@ -153,7 +153,7 @@ public class UserLoginController implements Initializable {
     }
 
     @FXML
-    void btnLogIn(ActionEvent event) throws IOException {
+    void btnLogin(ActionEvent event) throws IOException {
 
         if (getUsername().isEmpty()||getPassword().isEmpty()){
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -289,6 +289,7 @@ public class UserLoginController implements Initializable {
             alert.setContentText("Berhasil Menyimpan Data");
             alert.showAndWait();
 
+            refreshDatabase();
             btnBackToLogin(event);
         }
 
