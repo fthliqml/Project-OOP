@@ -28,32 +28,32 @@
             </Button>
             <ImageView fitHeight="23.0" fitWidth="27.0" layoutX="41.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@main-menu.png" />
+                  <Image url="@foto/main-menu.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="24.0" fitWidth="27.0" layoutX="20.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@guest-list.png" />
+                  <Image url="@foto/guest-list.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="24.0" fitWidth="27.0" layoutX="20.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@to-do-list.png" />
+                  <Image url="@foto/to-do-list.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="24.0" fitWidth="27.0" layoutX="20.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@supplier.png" />
+                  <Image url="@foto/supplier.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="24.0" fitWidth="27.0" layoutX="20.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@sales.png" />
+                  <Image url="@foto/sales.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="24.0" fitWidth="27.0" layoutX="33.0" layoutY="417.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@logout.png" />
+                  <Image url="@foto/logout.png" />
                </image>
             </ImageView>
          </children>
@@ -87,7 +87,7 @@
                         </Label>
                         <ImageView fitHeight="51.0" fitWidth="54.0" layoutX="16.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@Menambah.png" />
+                              <Image url="@foto/Menambah.png" />
                            </image>
                         </ImageView>
                         <Button fx:id="tambahID" layoutX="17.0" layoutY="44.0" mnemonicParsing="false" onAction="#btnTambah" prefHeight="113.6" prefWidth="84.8" style="-fx-background-color: transparent;" styleClass="btn" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
@@ -102,7 +102,7 @@
                         </Label>
                         <ImageView fitHeight="48.0" fitWidth="50.0" layoutX="17.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@edit.png" />
+                              <Image url="@foto/edit.png" />
                            </image>
                         </ImageView>
                         <Button fx:id="editID" layoutX="17.0" layoutY="32.0" mnemonicParsing="false" onAction="#btnEdit" prefHeight="113.6" prefWidth="84.8" style="-fx-background-color: transparent;" styleClass="btn" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
@@ -117,7 +117,7 @@
                         </Label>
                         <ImageView fitHeight="54.0" fitWidth="55.0" layoutX="15.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@reset.png" />
+                              <Image url="@foto/reset.png" />
                            </image>
                         </ImageView>
                         <Button fx:id="resetID" layoutY="31.0" mnemonicParsing="false" onAction="#btnReset" prefHeight="112.8" prefWidth="85.6" style="-fx-background-color: transparent;" styleClass="btn" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
@@ -162,7 +162,7 @@
                         </Button>
                         <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="138.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@supplier.png" />
+                              <Image url="@foto/supplier.png" />
                            </image>
                         </ImageView>
                         <Label alignment="CENTER" layoutX="14.0" layoutY="82.0" prefHeight="18.0" prefWidth="118.0" text="ID Supplier :" textAlignment="CENTER" textFill="#3f704d">
@@ -187,22 +187,22 @@
                         </Label>
                         <ImageView fitHeight="28.0" fitWidth="28.0" layoutX="53.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@number.png" />
+                              <Image url="@foto/number.png" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="24.0" fitWidth="27.0" layoutX="29.0" layoutY="289.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@placeholder.png" />
+                              <Image url="@foto/placeholder.png" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="24.0" fitWidth="27.0" layoutX="54.0" layoutY="230.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@phone.png" />
+                              <Image url="@foto/phone.png" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="29.0" fitWidth="30.0" layoutX="32.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@id-card.png" />
+                              <Image url="@foto/id-card.png" />
                            </image>
                         </ImageView>
                      </children>
@@ -214,7 +214,7 @@
                   </Label>
                   <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="189.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@supplier.png" />
+                        <Image url="@foto/supplier.png" />
                      </image>
                   </ImageView>
                </children>

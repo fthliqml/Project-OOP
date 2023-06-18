@@ -27,32 +27,32 @@
             <Button layoutX="17.0" layoutY="403.0" mnemonicParsing="false" onAction="#btnLogout" prefHeight="51.0" prefWidth="130.0" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-width: 0px 0px 2px 0px;" text="Logout" textFill="WHITE" />
             <ImageView fitHeight="23.0" fitWidth="27.0" layoutX="41.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@main-menu.png" />
+                  <Image url="@foto/main-menu.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="24.0" fitWidth="27.0" layoutX="20.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@guest-list.png" />
+                  <Image url="@foto/guest-list.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="24.0" fitWidth="27.0" layoutX="20.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@to-do-list.png" />
+                  <Image url="@foto/to-do-list.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="24.0" fitWidth="27.0" layoutX="20.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@supplier.png" />
+                  <Image url="@foto/supplier.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="24.0" fitWidth="27.0" layoutX="20.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@sales.png" />
+                  <Image url="@foto/sales.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="24.0" fitWidth="27.0" layoutX="33.0" layoutY="417.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@logout.png" />
+                  <Image url="@foto/logout.png" />
                </image>
             </ImageView>
          </children>
