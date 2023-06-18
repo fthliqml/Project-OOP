@@ -35,7 +35,7 @@
                   <TableView fx:id="tableBarang" layoutX="50.0" layoutY="78.0" prefHeight="374.0" prefWidth="732.0" styleClass="hollow" stylesheets="@TableViewStyle.css">
                     <columns>
                       <TableColumn fx:id="idCol" editable="false" prefWidth="43.199951171875" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="ID" />
-                      <TableColumn fx:id="namabarangCol" editable="false" prefWidth="113.60003662109375" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Nama Barang" />
+                      <TableColumn fx:id="namabarangCol" editable="false" prefWidth="113.60003662109375" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Barang" />
                         <TableColumn fx:id="merkCol" editable="false" prefWidth="78.4000244140625" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Merk" />
                         <TableColumn fx:id="jenisCol" editable="false" prefWidth="70.4000244140625" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Jenis" />
                         <TableColumn fx:id="stokCol" editable="false" prefWidth="48.7999267578125" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Stok" />
@@ -162,9 +162,9 @@
       <Pane fx:id="sliderNav" prefHeight="602.0" prefWidth="165.0" style="-fx-background-color: #3f704d; -fx-border-color: #ffff; -fx-border-width: 0px 2px 0px 0px;" BorderPane.alignment="CENTER">
          <children>
             <Button fx:id="barangID" layoutX="7.0" layoutY="161.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="150.5" style="-fx-background-color: #d5e3d0; -fx-border-color: #ffffff; -fx-border-width: 0px 0px 2px 0px;" text="       DAFTAR BARANG" textFill="#3f704d" />
-            <Button fx:id="supplierID" layoutX="7.0" layoutY="211.0" mnemonicParsing="false" onAction="#btnSupplier" prefHeight="51.0" prefWidth="150.5" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-width: 0px 0px 2px 0px;" text="SUPPLIER     " textFill="WHITE" />
+            <Button fx:id="supplierID" layoutX="7.0" layoutY="210.0" mnemonicParsing="false" onAction="#btnSupplier" prefHeight="51.0" prefWidth="150.5" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-width: 0px 0px 2px 0px;" text="SUPPLIER     " textFill="WHITE" />
             <Button fx:id="penggunaID" layoutX="7.0" layoutY="112.0" mnemonicParsing="false" onAction="#btnPengguna" prefHeight="51.0" prefWidth="150.5" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-width: 0px 0px 2px 0px;" text="PENGGUNA " textFill="WHITE" />
-            <Button fx:id="penjualanID" layoutX="7.0" layoutY="261.0" mnemonicParsing="false" onAction="#btnTransaksi" prefHeight="51.0" prefWidth="150.5" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-width: 0px 0px 2px 0px;" text="PENJUALAN  " textFill="WHITE" />
+            <Button fx:id="penjualanID" layoutX="7.0" layoutY="259.0" mnemonicParsing="false" onAction="#btnPenjualan" prefHeight="51.0" prefWidth="150.5" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-width: 0px 0px 2px 0px;" text="PENJUALAN  " textFill="WHITE" />
             <ImageView fx:id="closeNav1" fitHeight="23.0" fitWidth="27.0" layoutX="41.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@foto/main-menu.png" />
@@ -185,7 +185,7 @@
                   <Image url="@foto/supplier.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="img4" fitHeight="24.0" fitWidth="27.0" layoutX="20.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="img4" fitHeight="24.0" fitWidth="27.0" layoutX="18.0" layoutY="268.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@foto/sales.png" />
                </image>
@@ -221,7 +221,7 @@
                   <Image url="@foto/supplier.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="imgPenjualan" fitHeight="24.0" fitWidth="27.0" layoutX="134.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgPenjualan" fitHeight="24.0" fitWidth="27.0" layoutX="134.0" layoutY="268.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@foto/sales.png" />
                </image>

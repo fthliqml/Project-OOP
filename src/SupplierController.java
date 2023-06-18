@@ -224,8 +224,8 @@ public class SupplierController implements Initializable {
     }
 
     @FXML
-    void btnTransaksi(ActionEvent event) throws IOException{
-        root = FXMLLoader.load(getClass().getResource("Transaksi.fxml"));
+    void btnPenjualan(ActionEvent event) throws IOException{
+        root = FXMLLoader.load(getClass().getResource("Penjualan.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
 
@@ -299,12 +299,12 @@ public class SupplierController implements Initializable {
                         } else {
     
                             try {
-                                Image editIcon = new Image(new FileInputStream("D:\\Programming\\Java\\Big Project\\src\\editICON.png"));
+                                Image editIcon = new Image(new FileInputStream("D:\\Programming\\Java\\Big Project\\src\\foto\\editICON.png"));
                                 ImageView editView = new ImageView(editIcon);
                                 editView.setFitHeight(22); 
                                 editView.setFitWidth(23);
     
-                                Image deleteIcon = new Image(new FileInputStream("D:\\Programming\\Java\\Big Project\\src\\trash.png"));
+                                Image deleteIcon = new Image(new FileInputStream("D:\\Programming\\Java\\Big Project\\src\\foto\\trash.png"));
                                 ImageView deleteView = new ImageView(deleteIcon);
                                 deleteView.setFitHeight(24); 
                                 deleteView.setFitWidth(26);

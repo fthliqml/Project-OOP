@@ -1,25 +1,93 @@
 import java.io.IOException;
+import java.net.URL;
 import java.util.Optional;
+import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-public class TransaksiController {
+public class PenjualanController implements Initializable{
+
+    @FXML
+    private TableColumn<Penjualan, String> hargaCol;
+    @FXML
+    private TableColumn<Penjualan, String> idCol;
+    @FXML
+    private TableColumn<Penjualan, Integer> jumlahCol;
+    @FXML
+    private TableColumn<Penjualan, String> merkCol;
+    @FXML
+    private TableColumn<Penjualan, String> namaCol;
+    @FXML
+    private TableColumn<Penjualan, String> editCol;
+    @FXML
+    private TableView<Penjualan> tablePenjualan;
+    
+    @FXML
+    private TableColumn<Transaksi, String> checkColTr;
+    @FXML
+    private TableColumn<Transaksi, String> idColTr;
+    @FXML
+    private TableColumn<Transaksi, String> hargaColTr;
+    @FXML
+    private TableColumn<Transaksi, Integer> jumlahColTr;
+    @FXML
+    private TableView<Transaksi> tableTransaksi;
+
+    
+    @FXML
+    private AnchorPane menambahkanPane;
+
     private Stage stage;
     private Scene scene;
     private Parent root;
     private double xoffset = 0;
     private double yoffset = 0;
+
+    
+    @Override
+    public void initialize(URL arg0, ResourceBundle arg1) {
+        menambahkanPane.setVisible(false);
+    }
+
+    @FXML
+    void btnReset(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnEdit(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnTambah(ActionEvent event) {
+        menambahkanPane.setVisible(true);
+    }
+
+    @FXML
+    void btnSimpan(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnBatal(ActionEvent event) {
+        menambahkanPane.setVisible(false);
+    }
 
     @FXML
     void btnExit(ActionEvent event) {
@@ -149,4 +217,5 @@ public class TransaksiController {
         stage.setScene(scene);
         stage.show();
     }
+
 }

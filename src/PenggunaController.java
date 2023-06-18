@@ -142,8 +142,8 @@ public class PenggunaController {
     }
 
     @FXML
-    void btnTransaksi(ActionEvent event) throws IOException{
-        root = FXMLLoader.load(getClass().getResource("Transaksi.fxml"));
+    void btnPenjualan(ActionEvent event) throws IOException{
+        root = FXMLLoader.load(getClass().getResource("Penjualan.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
 

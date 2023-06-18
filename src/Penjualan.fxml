@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="788.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PenjualanController">
+   <left>
+<AnchorPane prefHeight="602.0" prefWidth="165.0" style="-fx-background-color: #3f704d; -fx-border-color: #ffff; -fx-border-width: 0px 2px 0px 0px;" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="7.0" layoutY="161.0" mnemonicParsing="false" onAction="#btnBarang" prefHeight="51.0" prefWidth="150.0" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-width: 0px 0px 2px 0px;" text="       DAFTAR BARANG" textFill="WHITE" />
+            <Button layoutX="7.0" layoutY="210.0" mnemonicParsing="false" onAction="#btnSupplier" prefHeight="51.0" prefWidth="150.0" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-width: 0px 0px 2px 0px;" text="SUPPLIER     " textFill="WHITE" />
+            <Button layoutX="7.0" layoutY="112.0" mnemonicParsing="false" onAction="#btnPengguna" prefHeight="51.0" prefWidth="150.0" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-width: 0px 0px 2px 0px;" text="PENGGUNA " textFill="WHITE" />
+            <Button layoutX="7.0" layoutY="259.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="150.0" style="-fx-background-color: #d5e3d0; -fx-border-color: #ffffff; -fx-border-width: 0px 0px 2px 0px;" text="PENJUALAN  " textFill="#3f704d" />
+            <Button layoutX="17.0" layoutY="403.0" mnemonicParsing="false" onAction="#btnLogout" prefHeight="51.0" prefWidth="130.0" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-width: 0px 0px 2px 0px;" text="Logout" textFill="WHITE" />
+            <Button alignment="BOTTOM_RIGHT" layoutX="32.0" layoutY="24.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="100.0" style="-fx-background-color: transparent; -fx-border-color: #ffffff; -fx-border-width: 0px 0px 1px 0px;" text="Menu   " textFill="#d5e3d0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="23.0" fitWidth="27.0" layoutX="41.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@foto/main-menu.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="24.0" fitWidth="27.0" layoutX="20.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@foto/guest-list.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="24.0" fitWidth="27.0" layoutX="20.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@foto/to-do-list.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="24.0" fitWidth="27.0" layoutX="20.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@foto/supplier.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="24.0" fitWidth="27.0" layoutX="18.0" layoutY="268.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@foto/sales.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="24.0" fitWidth="27.0" layoutX="33.0" layoutY="417.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@foto/logout.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </left>
+   <right>
+      <AnchorPane prefHeight="602.0" prefWidth="601.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="601.0" prefWidth="622.0" style="-fx-background-color: #d5e3d0; -fx-border-width: 0px 0px 2px 0px; -fx-border-color: #ffffff;">
+               <children>
+                  <Button layoutX="594.0" layoutY="2.0" mnemonicParsing="false" onAction="#btnExit" prefHeight="19.0" prefWidth="22.0" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <FontAwesomeIcon fill="#3f704d" glyphName="CLOSE" size="15" />
+                     </graphic>
+                  </Button>
+                  <TableView fx:id="tablePenjualan" layoutX="12.0" layoutY="82.0" prefHeight="287.0" prefWidth="600.0" styleClass="hollow" stylesheets="@TableViewStyle.css">
+                     <columns>
+                        <TableColumn fx:id="idCol" editable="false" prefWidth="40.799989342689514" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="ID" />
+                        <TableColumn fx:id="namaCol" editable="false" prefWidth="169.59996795654297" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Barang" />
+                        <TableColumn fx:id="merkCol" editable="false" prefWidth="136.80001831054688" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Merk" />
+                        <TableColumn fx:id="jumlahCol" editable="false" prefWidth="60.0" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Jumlah" />
+                        <TableColumn fx:id="hargaCol" editable="false" prefWidth="119.20004272460938" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Harga/pcs" />
+                        <TableColumn fx:id="editCol" editable="false" prefWidth="60.79990234374998" resizable="false" sortable="false" />
+                     </columns>
+                  </TableView>
+                  <Label alignment="CENTER" layoutX="176.0" layoutY="25.0" prefHeight="22.0" prefWidth="269.0" text="Daftar Hasil Penjualan" textAlignment="CENTER" textFill="#3f704d">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="143.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@foto/clipboard.png" />
+                     </image>
+                  </ImageView>
+                  <AnchorPane layoutX="27.0" layoutY="419.0" prefHeight="146.0" prefWidth="573.0" style="-fx-background-color: #edf6eb;" styleClass="hollow" stylesheets="@Shadow.css">
+                     <children>
+                        <AnchorPane layoutX="243.0" layoutY="15.0" prefHeight="100.0" prefWidth="74.0" style="-fx-background-color: e4ede1;" styleClass="hollow" stylesheets="@Shadow.css">
+                           <children>
+                              <Label alignment="CENTER" layoutX="18.0" layoutY="76.0" prefHeight="19.0" prefWidth="46.0" text="Edit" textFill="#3f704d">
+                                 <font>
+                                    <Font name="System Bold" size="10.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="48.0" fitWidth="50.0" layoutX="17.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@foto/edit.png" />
+                                 </image>
+                              </ImageView>
+                              <Button layoutX="17.0" layoutY="32.0" mnemonicParsing="false" onAction="#btnEdit" prefHeight="113.6" prefWidth="84.8" style="-fx-background-color: transparent;" styleClass="btn" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="41.0" layoutY="14.0" prefHeight="113.6" prefWidth="74.0" style="-fx-background-color: #e4ede1;" styleClass="hollow" stylesheets="@Shadow.css">
+                           <children>
+                              <Label alignment="CENTER" layoutX="20.0" layoutY="65.0" prefHeight="19.0" prefWidth="46.0" text="Hasil" textFill="#3f704d">
+                                 <font>
+                                    <Font name="System Bold" size="10.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="56.0" fitWidth="52.0" layoutX="16.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@foto/reset.png" />
+                                 </image>
+                              </ImageView>
+                              <Label alignment="CENTER" layoutX="20.0" layoutY="78.0" prefHeight="19.0" prefWidth="46.0" text="Penjualan" textFill="#3f704d">
+                                 <font>
+                                    <Font name="System Bold" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Button mnemonicParsing="false" onAction="#btnReset" prefHeight="112.8" prefWidth="85.6" style="-fx-background-color: transparent;" styleClass="btn" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="441.0" layoutY="14.0" prefHeight="113.6" prefWidth="74.0" style="-fx-background-color: #e4ede1;" styleClass="hollow" stylesheets="@Shadow.css">
+                           <children>
+                              <Label alignment="CENTER" layoutX="20.0" layoutY="65.0" prefHeight="19.0" prefWidth="46.0" text="Transaksi" textFill="#3f704d">
+                                 <font>
+                                    <Font name="System Bold" size="10.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="56.0" fitWidth="52.0" layoutX="16.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@foto/Menambah.png" />
+                                 </image>
+                              </ImageView>
+                              <Label alignment="CENTER" layoutX="20.0" layoutY="78.0" prefHeight="19.0" prefWidth="46.0" text="Penjualan" textFill="#3f704d">
+                                 <font>
+                                    <Font name="System Bold" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Button mnemonicParsing="false" onAction="#btnTambah" prefHeight="132.8" prefWidth="105.6" style="-fx-background-color: transparent;" styleClass="btn" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="menambahkanPane" layoutX="48.0" layoutY="32.0" prefHeight="498.0" prefWidth="522.0" style="-fx-background-color: #edf6eb;" styleClass="anchor" stylesheets="@Shadow.css">
+                     <children>
+                        <Label alignment="CENTER" layoutX="108.0" layoutY="9.0" prefHeight="30.0" prefWidth="308.0" text="Menambahkan Hasil Penjualan" textAlignment="CENTER" textFill="#3f704d">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="tableTransaksi" layoutX="60.0" layoutY="97.0" prefHeight="310.0" prefWidth="426.0" styleClass="hollow" stylesheets="@TableViewStyle.css">
+                           <columns>
+                              <TableColumn fx:id="checkColTr" editable="false" prefWidth="40.799989342689514" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" />
+                              <TableColumn fx:id="idColTr" editable="false" prefWidth="40.799989342689514" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="ID" />
+                              <TableColumn fx:id="namaColTr" editable="false" prefWidth="169.59996795654297" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Barang" />
+                              <TableColumn fx:id="hargaColTr" editable="false" prefWidth="104.80000610351561" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Harga/pcs" />
+                              <TableColumn fx:id="jumlahColTr" editable="false" prefWidth="64.79998168945315" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Jumlah" />
+                           </columns>
+                        </TableView>
+                        <Button layoutX="334.0" layoutY="422.0" mnemonicParsing="false" onAction="#btnSimpan" prefHeight="33.0" prefWidth="70.0" style="-fx-background-color: #3f704d;" text="Simpan" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <styleClass>
+                              <String fx:value="btn" />
+                              <String fx:value="hollow" />
+                           </styleClass>
+                        </Button>
+                        <Button layoutX="126.0" layoutY="422.0" mnemonicParsing="false" onAction="#btnBatal" prefHeight="33.0" prefWidth="70.0" style="-fx-background-color: #3f704d;" text="Batal" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <styleClass>
+                              <String fx:value="btn" />
+                              <String fx:value="hollow" />
+                           </styleClass>
+                        </Button>
+                        <Label layoutX="16.0" layoutY="34.0" text="Note :" textFill="#d72a2a">
+                           <font>
+                              <Font name="System Bold Italic" size="8.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="48.0" style="-fx-border-color: #d72a2a; -fx-border-width: 2px 2px 2px 2px;" text="Centang barang yang terjual dan&#10;Pilih jumlah barang yang terjual">
+                           <font>
+                              <Font name="System Bold" size="8.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="56.0" fitWidth="87.0" layoutX="232.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@foto/addList.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="34.0" fitWidth="36.0" layoutX="414.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@foto/clipboard.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>
