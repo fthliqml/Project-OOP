@@ -140,6 +140,7 @@ public class DaftarBarangController implements Initializable {
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
+        Supplier.namaList.clear();
         try {
             Connection connection;
             PreparedStatement preparedStatement;
