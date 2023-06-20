@@ -53,7 +53,5 @@ public class DaftarBarang extends AbstractBarang {
     public String getSupplier(){
         return Supplier;
     }
-    @Override
-    public void macamBarang() {
-    }
+
 }

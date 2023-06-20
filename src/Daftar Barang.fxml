@@ -32,15 +32,15 @@
                         <String fx:value="hollow" />
                         <String fx:value="btn" />
                      </styleClass></Button>
-                  <TableView fx:id="tableBarang" layoutX="50.0" layoutY="78.0" prefHeight="374.0" prefWidth="732.0" styleClass="hollow" stylesheets="@TableViewStyle.css">
+                  <TableView fx:id="tableBarang" layoutX="47.0" layoutY="78.0" prefHeight="374.0" prefWidth="732.0" styleClass="hollow" stylesheets="@TableViewStyle.css">
                     <columns>
                       <TableColumn fx:id="idCol" editable="false" prefWidth="43.199951171875" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="ID" />
-                      <TableColumn fx:id="namabarangCol" editable="false" prefWidth="113.60003662109375" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Barang" />
-                        <TableColumn fx:id="merkCol" editable="false" prefWidth="78.4000244140625" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Merk" />
-                        <TableColumn fx:id="jenisCol" editable="false" prefWidth="70.4000244140625" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Jenis" />
-                        <TableColumn fx:id="stokCol" editable="false" prefWidth="48.7999267578125" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Stok" />
-                        <TableColumn fx:id="hargaCol" editable="false" prefWidth="85.59991455078125" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Harga Satuan" />
-                        <TableColumn fx:id="kadaluarsaCol" editable="false" prefWidth="95.20004272460938" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Tgl. Kadaluarsa" />
+                      <TableColumn fx:id="namabarangCol" editable="false" prefWidth="106.40001678466797" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Barang" />
+                        <TableColumn fx:id="merkCol" editable="false" prefWidth="82.39996337890625" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Merk" />
+                        <TableColumn fx:id="jenisCol" editable="false" prefWidth="100.0" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Jenis" />
+                        <TableColumn fx:id="stokCol" editable="false" prefWidth="52.0" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Stok" />
+                        <TableColumn fx:id="hargaCol" editable="false" prefWidth="68.0" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Harga/pcs" />
+                        <TableColumn fx:id="kadaluarsaCol" editable="false" prefWidth="90.40005493164062" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Tgl. Kadaluarsa" />
                         <TableColumn fx:id="supplierCol" editable="false" prefWidth="120.800048828125" resizable="false" sortable="false" style="-fx-alignment: center; -fx-text-fill: #363b3d;" text="Supplier" />
                         <TableColumn fx:id="editCol" editable="false" prefWidth="67.20001220703125" resizable="false" sortable="false" />
                     </columns>

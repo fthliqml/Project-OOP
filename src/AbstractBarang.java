@@ -9,5 +9,4 @@ public abstract class AbstractBarang {
     public abstract String getHarga();
     public abstract Date getTanggal();
     public abstract String getSupplier();
-    public abstract void macamBarang();
 }

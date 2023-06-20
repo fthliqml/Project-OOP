@@ -7,7 +7,6 @@ import javafx.scene.control.TextField;
 public class Transaksi extends DaftarBarang {
     private CheckBox Box;
     private TextField Jumlah;
-
     static ArrayList<CheckBox> BoxList = new ArrayList<CheckBox>();
     static ArrayList<TextField> jumlahTFields = new ArrayList<TextField>();
 

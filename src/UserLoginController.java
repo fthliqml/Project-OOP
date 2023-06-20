@@ -283,17 +283,17 @@ public class UserLoginController implements Initializable {
             insert.setString(6, Rpassword.getText());
             insert.executeUpdate();
 
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText(null);
+            alert.setContentText("Berhasil Menyimpan Data");
+            alert.showAndWait();
+
             Rjabatan.setText("");
             Rnama.setText("");
             Rtelepon.setText("");
             Ralamat.setText("");
             Rusername.setText("");
             Rpassword.setText("");
-
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setHeaderText(null);
-            alert.setContentText("Berhasil Menyimpan Data");
-            alert.showAndWait();
 
             refreshDatabase();
             btnBackToLogin(event);

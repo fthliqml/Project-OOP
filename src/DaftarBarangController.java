@@ -503,7 +503,29 @@ public class DaftarBarangController implements Initializable {
     
     @FXML
     void btnReset(ActionEvent event){
-
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setX(650);
+        alert.setY(270);
+        alert.initStyle(StageStyle.UTILITY);
+        alert.setHeaderText(null);
+        alert.setContentText("Apakah Anda Yakin Ingin Menghapus Semua Data?");
+        
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK){
+            try {
+                Connection connection;
+                PreparedStatement preparedStatement;
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                connection = DriverManager.getConnection("jdbc:mysql://localhost/pbo project", "root", "");
+                preparedStatement = connection.prepareStatement("DELETE FROM `barang`");
+                preparedStatement.execute();
+                refreshTable();
+                
+            } catch (SQLException | ClassNotFoundException ex) {
+                ex.printStackTrace();
+        
+                }
+        }
     }
 
     @FXML
