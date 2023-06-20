@@ -374,6 +374,7 @@ public class SupplierController implements Initializable {
     i++;
         
     }
+    
     @FXML
     void btnTambah(ActionEvent event) {
         setUpdate(false);

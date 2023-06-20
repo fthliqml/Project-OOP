@@ -27,7 +27,7 @@
                         <FontAwesomeIcon fill="#3f704d" glyphName="CLOSE" size="15" styleClass="btn" />
                      </graphic>
                   </Button>
-                  <Button layoutX="646.0" layoutY="515.0" mnemonicParsing="false" onAction="#btnTambah" prefHeight="42.0" prefWidth="98.0" style="-fx-background-color: #1c8fc4; -fx-border-color: #d5e3d0; -fx-border-width: 0px 0px 3px 0px;" stylesheets="@Shadow.css" text="Tambah" textFill="WHITE">
+                  <Button layoutX="619.0" layoutY="510.0" mnemonicParsing="false" onAction="#btnTambah" prefHeight="42.0" prefWidth="98.0" style="-fx-background-color: #1c8fc4; -fx-border-color: #d5e3d0; -fx-border-width: 0px 0px 3px 0px;" stylesheets="@Shadow.css" text="     Tambah" textFill="WHITE">
                      <styleClass>
                         <String fx:value="hollow" />
                         <String fx:value="btn" />
@@ -51,6 +51,22 @@
                      </font>
                   </Label>
                   <FontAwesomeIcon fill="#3f704d" glyphName="ARCHIVE" layoutX="487.0" layoutY="55.0" size="35" />
+                  <ImageView fitHeight="30.0" fitWidth="27.0" layoutX="624.0" layoutY="517.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@foto/plus.png" />
+                     </image>
+                  </ImageView>
+                  <Button layoutX="115.0" layoutY="510.0" mnemonicParsing="false" onAction="#btnReset" prefHeight="42.0" prefWidth="98.0" style="-fx-background-color: #1c8fc4; -fx-border-color: #d5e3d0; -fx-border-width: 0px 0px 3px 0px;" stylesheets="@Shadow.css" text="   Reset" textFill="WHITE">
+                     <styleClass>
+                        <String fx:value="hollow" />
+                        <String fx:value="btn" />
+                     </styleClass>
+                  </Button>
+                  <ImageView fitHeight="30.0" fitWidth="27.0" layoutX="121.0" layoutY="517.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@foto/circular.png" />
+                     </image>
+                  </ImageView>
                   <AnchorPane fx:id="menambahkanPane" layoutX="190.0" layoutY="73.0" prefHeight="457.0" prefWidth="388.0" style="-fx-background-color: #edf6eb;" styleClass="anchor" stylesheets="@Shadow.css">
                      <children>
                         <Label alignment="CENTER" layoutX="44.0" layoutY="14.0" prefHeight="22.0" prefWidth="269.0" text="MENAMBAHKAN BARANG" textAlignment="CENTER" textFill="#3f704d">
@@ -231,7 +247,7 @@
                   <Image url="@foto/logout.png" />
                </image>
             </ImageView>
-            <Pane fx:id="openNav" layoutX="129.0" layoutY="-7.0" prefHeight="602.0" prefWidth="35.0" style="-fx-background-color: transparent;" />
+            <Pane fx:id="openNav" layoutX="129.0" layoutY="-7.0" prefHeight="602.0" prefWidth="35.0" style="-fx-background-color: transparent;" styleClass="btn" />
          </children>
       </Pane>
    </left>

@@ -502,6 +502,11 @@ public class DaftarBarangController implements Initializable {
     }
     
     @FXML
+    void btnReset(ActionEvent event){
+
+    }
+
+    @FXML
     void btnTambah(ActionEvent event) throws IOException {
         setUpdate(false);
         menambahkanPane.setVisible(true);

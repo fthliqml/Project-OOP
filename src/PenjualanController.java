@@ -1,4 +1,5 @@
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -9,7 +10,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Optional;
 import java.util.ResourceBundle;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -79,8 +79,8 @@ public class PenjualanController implements Initializable{
     private Parent root;
     private double xoffset = 0;
     private double yoffset = 0;
-    private Boolean update;
     private int index;
+    int i = 2;
 
     ResultSet resultSet = null ;
     Penjualan penjualan = null ;
@@ -103,13 +103,107 @@ public class PenjualanController implements Initializable{
     }
 
     @FXML
-    void btnReset(ActionEvent event) {
-
+    void btnReset(ActionEvent event) throws SQLException, ClassNotFoundException {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setX(650);
+        alert.setY(270);
+        alert.initStyle(StageStyle.UTILITY);
+        alert.setHeaderText(null);
+        alert.setContentText("Apakah Anda Yakin Ingin Menghapus Semua Data?");
+        
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK){
+            try {
+                Connection connection;
+                PreparedStatement preparedStatement;
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                connection = DriverManager.getConnection("jdbc:mysql://localhost/pbo project", "root", "");
+                preparedStatement = connection.prepareStatement("DELETE FROM `penjualan`");
+                preparedStatement.execute();
+                refreshtablePenjualan();
+                
+            } catch (SQLException | ClassNotFoundException ex) {
+                ex.printStackTrace();
+        
+                }
+        }
     }
 
     @FXML
-    void btnEdit(ActionEvent event) {
+    void btnEdit(ActionEvent event) throws ClassNotFoundException, SQLException {
+        if (i%2==1) {
+            editCol.setVisible(false);
+        }
+        else {
+            editCol.setVisible(true);
+            Callback<TableColumn<Penjualan, String>, TableCell<Penjualan, String>> cellFoctory = (TableColumn<Penjualan, String> param) -> {
+                final TableCell<Penjualan, String> cell = new TableCell<Penjualan, String>() {
+                    @Override
+                    public void updateItem(String item, boolean empty) {
+                        super.updateItem(item, empty);
+    
+                        if (empty) {
+                            setGraphic(null);
+                            setText(null);
+    
+                        } else {
+    
+                            try {
+                                Image deleteIcon = new Image(new FileInputStream("D:\\Programming\\Java\\Big Project\\src\\foto\\trash.png"));
+                                ImageView deleteView = new ImageView(deleteIcon);
+                                deleteView.setFitHeight(23); 
+                                deleteView.setFitWidth(26);
+    
+                                HBox managebtn = new HBox(deleteView);
+                                managebtn.setStyle("-fx-alignment:center;"+"-fx-cursor:hand;");
+                                HBox.setMargin(deleteView, new Insets(2, 3, 0, 2));
+    
+                                setGraphic(managebtn);
+                                setText(null);
 
+                                deleteView.setOnMouseClicked((MouseEvent event) -> {
+                                    Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                                    alert.setX(650);
+                                    alert.setY(270);
+                                    alert.initStyle(StageStyle.UTILITY);
+                                    alert.setHeaderText(null);
+                                    alert.setContentText("Apakah Anda Yakin Ingin Menghapus?");
+                                    
+                                    Optional<ButtonType> result = alert.showAndWait();
+                                    if (result.get() == ButtonType.OK){
+                                        try {
+                                            Connection connection;
+                                            PreparedStatement preparedStatement;
+                                            Class.forName("com.mysql.cj.jdbc.Driver");
+                                            connection = DriverManager.getConnection("jdbc:mysql://localhost/pbo project", "root", "");
+                                            penjualan = tablePenjualan.getSelectionModel().getSelectedItem();
+                                            preparedStatement = connection.prepareStatement("DELETE FROM `penjualan` WHERE ID = ?");
+                                            preparedStatement.setString(1, penjualan.getID());
+                                            preparedStatement.execute();
+                                            refreshtablePenjualan();
+                                            
+                                        } catch (SQLException | ClassNotFoundException ex) {
+                                            ex.printStackTrace();
+                                    
+                                            }
+                                    }
+                                
+                                });
+
+                            } catch (FileNotFoundException e) {
+                                e.printStackTrace();
+                            }
+    
+                        }
+                    }
+    
+                };
+                return cell;
+            };
+             editCol.setCellFactory(cellFoctory);
+             
+        }
+    i++;
     }
 
     @FXML
@@ -220,6 +314,8 @@ public class PenjualanController implements Initializable{
 
 
     private void refreshTableTransaksi() throws SQLException, ClassNotFoundException{
+        Transaksi.BoxList.clear();
+        Transaksi.jumlahTFields.clear();
         tambahBarangIcon();
         transaksiList.clear();
 

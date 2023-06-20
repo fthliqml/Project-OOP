@@ -93,7 +93,7 @@
                      <children>
                         <AnchorPane layoutX="243.0" layoutY="15.0" prefHeight="100.0" prefWidth="74.0" style="-fx-background-color: e4ede1;" styleClass="hollow" stylesheets="@Shadow.css">
                            <children>
-                              <Label alignment="CENTER" layoutX="18.0" layoutY="76.0" prefHeight="19.0" prefWidth="46.0" text="Edit" textFill="#3f704d">
+                              <Label alignment="CENTER" layoutX="18.0" layoutY="76.0" prefHeight="19.0" prefWidth="46.0" text="Tabel" textFill="#3f704d">
                                  <font>
                                     <Font name="System Bold" size="10.0" />
                                  </font>
@@ -108,7 +108,7 @@
                         </AnchorPane>
                         <AnchorPane layoutX="41.0" layoutY="14.0" prefHeight="113.6" prefWidth="74.0" style="-fx-background-color: #e4ede1;" styleClass="hollow" stylesheets="@Shadow.css">
                            <children>
-                              <Label alignment="CENTER" layoutX="20.0" layoutY="65.0" prefHeight="19.0" prefWidth="46.0" text="Hasil" textFill="#3f704d">
+                              <Label alignment="CENTER" layoutX="20.0" layoutY="65.0" prefHeight="19.0" prefWidth="46.0" text="Data" textFill="#3f704d">
                                  <font>
                                     <Font name="System Bold" size="10.0" />
                                  </font>

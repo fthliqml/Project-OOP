@@ -62,6 +62,12 @@ public class UserLoginController implements Initializable {
     private Text labelAgentLogin;
 
     @FXML
+    private Text logintxt1;
+
+    @FXML
+    private Text logintxt2;
+
+    @FXML
     private Label labelNote;
 
     @FXML
@@ -123,7 +129,7 @@ public class UserLoginController implements Initializable {
                     
         
                     TranslateTransition slide = new TranslateTransition();
-                    slide.setDuration(Duration.seconds(1.0));
+                    slide.setDuration(Duration.seconds(1.2));
                     slide.setNode(slider);
                     slide.setToX(347);
                     slide.play();
@@ -310,7 +316,7 @@ public class UserLoginController implements Initializable {
         exitBlue.setVisible(true);
 
         TranslateTransition slide = new TranslateTransition();
-        slide.setDuration(Duration.seconds(1.0));
+        slide.setDuration(Duration.seconds(1.2));
         slide.setNode(slider);
         slide.setToX(6);
         slide.play();

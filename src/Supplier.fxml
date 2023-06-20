@@ -80,7 +80,7 @@
                   </TableView>
                   <AnchorPane layoutX="455.0" layoutY="102.0" prefHeight="100.0" prefWidth="74.0" style="-fx-background-color: #e4ede1;" styleClass="hollow" stylesheets="@Shadow.css">
                      <children>
-                        <Label alignment="CENTER" layoutX="18.0" layoutY="74.0" prefHeight="19.0" prefWidth="46.0" text="Tambah" textFill="#3f704d">
+                        <Label alignment="CENTER" layoutX="18.0" layoutY="74.0" prefHeight="19.0" prefWidth="46.0" text="Supplier" textFill="#3f704d">
                            <font>
                               <Font name="System Bold" size="10.0" />
                            </font>
@@ -95,7 +95,7 @@
                   </AnchorPane>
                   <AnchorPane layoutX="269.0" layoutY="102.0" prefHeight="100.0" prefWidth="74.0" style="-fx-background-color: e4ede1;" styleClass="hollow" stylesheets="@Shadow.css">
                      <children>
-                        <Label alignment="CENTER" layoutX="18.0" layoutY="76.0" prefHeight="19.0" prefWidth="46.0" text="Edit" textFill="#3f704d">
+                        <Label alignment="CENTER" layoutX="18.0" layoutY="76.0" prefHeight="19.0" prefWidth="46.0" text="Tabel" textFill="#3f704d">
                            <font>
                               <Font name="System Bold" size="10.0" />
                            </font>
@@ -110,7 +110,7 @@
                   </AnchorPane>
                   <AnchorPane layoutX="82.0" layoutY="101.0" prefHeight="100.0" prefWidth="85.0" style="-fx-background-color: e4ede1;" styleClass="hollow" stylesheets="@Shadow.css">
                      <children>
-                        <Label alignment="CENTER" layoutX="18.0" layoutY="77.0" prefHeight="19.0" prefWidth="46.0" text="Reset" textFill="#3f704d">
+                        <Label alignment="CENTER" layoutX="18.0" layoutY="77.0" prefHeight="19.0" prefWidth="46.0" text="Data" textFill="#3f704d">
                            <font>
                               <Font name="System Bold" size="10.0" />
                            </font>
@@ -150,12 +150,12 @@
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </TextField>
-                        <Button layoutX="173.0" layoutY="337.0" mnemonicParsing="false" onAction="#btnSimpan" style="-fx-background-color: #3f704d;" text="Simpan" textFill="WHITE">
+                        <Button layoutX="173.0" layoutY="337.0" mnemonicParsing="false" onAction="#btnSimpan" style="-fx-background-color: #3f704d;" styleClass="btn" text="Simpan" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </Button>
-                        <Button layoutX="85.0" layoutY="337.0" mnemonicParsing="false" onAction="#btnBatal" prefHeight="26.0" prefWidth="61.0" style="-fx-background-color: #3f704d;" text="Batal" textFill="WHITE">
+                        <Button layoutX="85.0" layoutY="337.0" mnemonicParsing="false" onAction="#btnBatal" prefHeight="26.0" prefWidth="61.0" style="-fx-background-color: #3f704d;" styleClass="btn" text="Batal" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>

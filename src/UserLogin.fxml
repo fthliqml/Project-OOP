@@ -41,7 +41,7 @@
                   <Font name="System Bold" size="12.0" />
                </font></PasswordField>
             <AnchorPane layoutX="336.0" layoutY="-13.0" prefHeight="500.0" prefWidth="15.0" style="-fx-background-color: #3f704d;" />
-            <Button fx:id="RegisterID" layoutX="77.0" layoutY="383.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="88.0" style="-fx-background-color: #37afe7;" stylesheets="@Shadow.css" text="Buat Akun" textFill="WHITE">
+            <Button fx:id="btnLoginID" layoutX="191.0" layoutY="370.0" mnemonicParsing="false" onAction="#btnLogin" prefHeight="40.0" prefWidth="88.0" style="-fx-background-color: #37afe7;" stylesheets="@Shadow.css" text="Login" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -49,23 +49,25 @@
                   <String fx:value="btn" />
                   <String fx:value="hollow" />
                </styleClass></Button>
-            <Button fx:id="btnLoginID" layoutX="189.0" layoutY="383.0" mnemonicParsing="false" onAction="#btnLogin" prefHeight="40.0" prefWidth="88.0" style="-fx-background-color: #37afe7;" stylesheets="@Shadow.css" text="Login" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-               <styleClass>
-                  <String fx:value="btn" />
-                  <String fx:value="hollow" />
-               </styleClass></Button>
-            <Label fx:id="labelNote" layoutX="74.0" layoutY="346.0" text="Belum Punya Akun?" textFill="#3f704d">
-               <font>
-                  <Font name="System Bold" size="10.0" />
-               </font></Label>
             <ImageView fx:id="imgGuest" fitHeight="101.0" fitWidth="103.0" layoutX="125.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@foto/user.png" />
                </image>
             </ImageView>
+            <Button fx:id="RegisterID" layoutX="59.0" layoutY="370.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="91.0" style="-fx-background-color: #37afe7;" stylesheets="@Shadow.css" text="Buat Akun" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="btn" />
+                  <String fx:value="hollow" />
+               </styleClass>
+            </Button>
+            <Label fx:id="labelNote" layoutX="51.0" layoutY="335.0" text="Belum Punya Akun?" textFill="#3f704d">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </right>
@@ -86,12 +88,26 @@
                         <FontAwesomeIcon fx:id="exitWhite" fill="WHITE" glyphName="CLOSE" size="15" styleClass="btn" text="" />
                      </graphic>
                   </Button>
-                  <Text fill="WHITE" layoutX="22.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PEMANTAUAN STOK BARANG">
+                  <Text fx:id="logintxt1" fill="WHITE" layoutX="105.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hello, Staff ! ">
                      <font>
-                        <Font name="Dubai Bold" size="22.0" />
+                        <Font name="System Bold Italic" size="22.0" />
                      </font>
                   </Text>
-                  <FontAwesomeIcon fill="#efefef" glyphName="SHOPPING_CART" layoutX="115.0" layoutY="233.0" size="120" />
+                  <Text fx:id="logintxt2" fill="WHITE" layoutX="62.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your personal details &#10;and start monitoring the store&#10;">
+                     <font>
+                        <Font name="Dubai Regular" size="18.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" layoutX="43.0" layoutY="364.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MONITORING PENJUALAN &#10;&#9;&#9;      DAN &#10;&#9;      STOK TOKO">
+                     <font>
+                        <Font name="Dubai Bold" size="21.0" />
+                     </font>
+                  </Text>
+                  <ImageView fx:id="imgGuest2" fitHeight="106.0" fitWidth="114.0" layoutX="118.0" layoutY="226.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@foto/online-store.png" />
+                     </image>
+                  </ImageView>
                </children>
             </AnchorPane>
             <Pane fx:id="registerPane" layoutX="5.0" layoutY="-1.0" prefHeight="469.0" prefWidth="340.0">
@@ -109,43 +125,51 @@
                   <TextField fx:id="Rjabatan" alignment="CENTER" layoutX="50.0" layoutY="257.0" prefHeight="27.0" prefWidth="115.0" promptText="Jabatan            " style="-fx-background-color: transparent; -fx-border-color: #37afe7; -fx-border-width: 0px 0px 2px 0px; -fx-text-fill: #3f704d;">
                      <font>
                         <Font name="System Bold" size="12.0" />
-                     </font></TextField>
+                     </font>
+                  </TextField>
                   <TextField fx:id="Rusername" layoutX="108.0" layoutY="150.0" promptText="Username" style="-fx-background-color: transparent; -fx-border-color: #37afe7; -fx-border-width: 0px 0px 2px 0px; -fx-text-fill: #3f704d;">
                      <font>
                         <Font name="System Bold" size="12.0" />
-                     </font></TextField>
+                     </font>
+                  </TextField>
                   <TextField fx:id="Rpassword" layoutX="108.0" layoutY="207.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #37afe7; -fx-border-width: 0px 0px 2px 0px; -fx-text-fill: #3f704d;">
                      <font>
                         <Font name="System Bold" size="12.0" />
-                     </font></TextField>
+                     </font>
+                  </TextField>
                   <TextField fx:id="Rnama" alignment="CENTER" layoutX="206.0" layoutY="257.0" prefHeight="27.0" prefWidth="130.0" promptText="Nama Lengkap" style="-fx-background-color: transparent; -fx-border-color: #37afe7; -fx-border-width: 0px 0px 2px 0px; -fx-text-fill: #3f704d;">
                      <font>
                         <Font name="System Bold" size="12.0" />
-                     </font></TextField>
+                     </font>
+                  </TextField>
                   <TextField fx:id="Ralamat" alignment="CENTER" layoutX="206.0" layoutY="309.0" prefHeight="27.0" prefWidth="130.0" promptText="Alamat" style="-fx-background-color: transparent; -fx-border-color: #37afe7; -fx-border-width: 0px 0px 2px 0px; -fx-text-fill: #3f704d;">
                      <font>
                         <Font name="System Bold" size="12.0" />
-                     </font></TextField>
+                     </font>
+                  </TextField>
                   <TextField fx:id="Rtelepon" alignment="CENTER" layoutX="50.0" layoutY="309.0" prefHeight="27.0" prefWidth="115.0" promptText="Nomor Telepon " style="-fx-background-color: transparent; -fx-border-color: #37afe7; -fx-border-width: 0px 0px 2px 0px; -fx-text-fill: #3f704d;">
                      <font>
                         <Font name="System Bold" size="12.0" />
-                     </font></TextField>
-                  <Button layoutX="227.0" layoutY="374.0" mnemonicParsing="false" onAction="#btnBackToLogin" prefHeight="40.0" prefWidth="88.0" style="-fx-background-color: #37afe7;" stylesheets="@Shadow.css" text="Kembali " textFill="WHITE">
+                     </font>
+                  </TextField>
+                  <Button layoutX="227.0" layoutY="374.0" mnemonicParsing="false" onAction="#btnBackToLogin" prefHeight="40.0" prefWidth="88.0" style="-fx-background-color: #37afe7;" stylesheets="@Shadow.css" text="Kembali" textFill="WHITE">
                      <font>
-                        <Font name="System Bold Italic" size="12.0" />
+                        <Font name="System Bold" size="12.0" />
                      </font>
                      <styleClass>
                         <String fx:value="btn" />
                         <String fx:value="hollow" />
-                     </styleClass></Button>
+                     </styleClass>
+                  </Button>
                   <Button layoutX="56.0" layoutY="374.0" mnemonicParsing="false" onAction="#btnBuatAkun" prefHeight="40.0" prefWidth="98.0" style="-fx-background-color: #37afe7;" stylesheets="@Shadow.css" text="Simpan Data" textFill="WHITE">
                      <font>
-                        <Font name="System Bold Italic" size="12.0" />
+                        <Font name="System Bold" size="12.0" />
                      </font>
                      <styleClass>
                         <String fx:value="btn" />
                         <String fx:value="hollow" />
-                     </styleClass></Button>
+                     </styleClass>
+                  </Button>
                   <FontAwesomeIcon fill="#37afe7" glyphName="USER" layoutX="75.0" layoutY="173.0" size="20" />
                   <FontAwesomeIcon fill="#37afe7" glyphName="KEY" layoutX="73.0" layoutY="230.0" size="20" />
                   <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="178.0" layoutY="258.0" pickOnBounds="true" preserveRatio="true">
