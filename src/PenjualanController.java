@@ -177,8 +177,9 @@ public class PenjualanController implements Initializable{
                                             Class.forName("com.mysql.cj.jdbc.Driver");
                                             connection = DriverManager.getConnection("jdbc:mysql://localhost/pbo project", "root", "");
                                             penjualan = tablePenjualan.getSelectionModel().getSelectedItem();
-                                            preparedStatement = connection.prepareStatement("DELETE FROM `penjualan` WHERE ID = ?");
+                                            preparedStatement = connection.prepareStatement("DELETE FROM `penjualan` WHERE ID = ? AND Jumlah = ?");
                                             preparedStatement.setString(1, penjualan.getID());
+                                            preparedStatement.setInt(2, penjualan.getStok());
                                             preparedStatement.execute();
                                             refreshtablePenjualan();
                                             
@@ -316,6 +317,7 @@ public class PenjualanController implements Initializable{
     private void refreshTableTransaksi() throws SQLException, ClassNotFoundException{
         Transaksi.BoxList.clear();
         Transaksi.jumlahTFields.clear();
+        stokRS.clear();
         tambahBarangIcon();
         transaksiList.clear();
 

@@ -164,7 +164,7 @@ public class UserLoginController implements Initializable {
         if (getUsername().isEmpty()||getPassword().isEmpty()){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
-            alert.setContentText("Please Fill All DATA");
+            alert.setContentText("Isi Semua Data");
             alert.showAndWait();
         }
         
